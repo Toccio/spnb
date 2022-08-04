@@ -1,0 +1,12 @@
+<h1>Browse all superpowers</h1>
+<ul>
+<% @superpowers.each do |superpower|  %>
+<li>
+<h2> <%= superpower.name %> </h2>
+<p> <%= superpower.description %></p>
+<p> <%= superpower.created_at %></p>
+<p> <%= superpower.price %></p>
+
+</li>
+<% end %>
+</ul>

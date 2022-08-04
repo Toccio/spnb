@@ -128,8 +128,14 @@ GEM
     minitest (5.16.2)
     msgpack (1.5.4)
     nio4r (2.5.8)
+<<<<<<< HEAD
     nokogiri (1.13.8-x86_64-darwin)
       racc (~> 1.4)
+=======
+    nokogiri (1.13.8-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.13.8-x86_64-darwin)
+>>>>>>> 71d1526f01e1c8976103088880480dba1563177e
     nokogiri (1.13.8-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -145,6 +151,8 @@ GEM
     public_suffix (4.0.7)
     puma (5.6.4)
       nio4r (~> 2.0)
+    pundit (2.2.0)
+      activesupport (>= 3.0.0)
     racc (1.6.0)
     rack (2.2.4)
     rack-mini-profiler (2.3.4)
@@ -245,6 +253,10 @@ GEM
     zeitwerk (2.6.0)
 
 PLATFORMS
+<<<<<<< HEAD
+=======
+  arm64-darwin-20
+>>>>>>> 71d1526f01e1c8976103088880480dba1563177e
   x86_64-darwin-21
   x86_64-linux
 
@@ -262,6 +274,7 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   puma (~> 5.0)
+  pundit
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.6, >= 6.1.6.1)
   sass-rails (>= 6)
