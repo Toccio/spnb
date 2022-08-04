@@ -19,7 +19,7 @@ class SuperpowersController < ApplicationController
     authorize @superpower
   end
 
-  # POST / superpower
+  # POST / superpowerch
   def create
     @superpower = Superpower.new(superpower_params)
     @superpower.user = current_user
@@ -32,10 +32,22 @@ class SuperpowersController < ApplicationController
     end
   end
 
+    # GET/superpowers/1/edit
+    def edit
+    end
+
+    # PATCH/PUT/superpowers/1
+    def update
+      if @superpower.update(superpower_params)
+        redirect_to @superpower, notice: 'Superpower now more super!'
+      else
+        render :edit
+      end
+    end
 
   def destroy
     @superpower = Superpower.find(params[:id])
-    @superpower.destory
+    @superpower.destroy
     redirect_to superpowers_path
   end
 
@@ -50,30 +62,4 @@ end
 
 def superpower_params
   params.require(:superpower).permit(:name, :description, :price, :address, :created_at, :updated_at)
-end
-
-  # GET/superpowers/1/edit
-  def edit
-  end
-
-  # PATCH/PUT/superpowers/1
-  def update
-    if @superpower.update(superpower_params)
-      redirect_to @superpower, notice: 'Superpower now more super!'
-    else
-      render :edit
-    end
-  end
-
-  private
-
-  def set_superpower
-    @superpower = Superpower.find(params[:id])
-    authorize @superpower
-    # with authorize @superpower we decide which user is allowed to see this form
-  end
-
-  def superpower_params
-    params.require(:superpower).permit(:name, :description, :price, :address, :created_at, :updated_at)
-  end
 end
