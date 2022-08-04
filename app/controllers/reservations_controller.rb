@@ -8,7 +8,7 @@ class ReservationsController < ApplicationController
 
   private
 
-  def set_superpower
+  def set_reservation
     @reservation = Reservation.find(params[:id])
   end
 end
