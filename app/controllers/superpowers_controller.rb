@@ -32,9 +32,9 @@ class SuperpowersController < ApplicationController
     end
   end
 
-    # GET/superpowers/1/edit
-    def edit
-    end
+  # GET/superpowers/1/edit
+  def edit
+  end
 
     # PATCH/PUT/superpowers/1
     def update
@@ -46,10 +46,10 @@ class SuperpowersController < ApplicationController
     end
 
   def destroy
-    @superpower = Superpower.find(params[:id])
     @superpower.destroy
     redirect_to superpowers_path
   end
+end
 
 private
 
