@@ -50,6 +50,13 @@ class SuperpowersController < ApplicationController
     else
       render :edit
     end
+
+  end
+
+  def destroy
+    @superpower.destroy
+    redirect_to superpowers_path
+
   end
 
   private
@@ -59,6 +66,13 @@ class SuperpowersController < ApplicationController
     authorize @superpower
     # with authorize @superpower we decide which user is allowed to see this form
   end
+
+def set_superpower
+  @superpower = Superpower.find(params[:id])
+  authorize @superpower
+  # with authorize @superpower we decide which user is allowed to see this form
+end
+
 
   def superpower_params
     params.require(:superpower).permit(:name, :description, :price, :address, :created_at, :updated_at)
