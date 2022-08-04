@@ -1,0 +1,7 @@
+<h1> <%= @superpower.name %></h1>
+<p> <%= @superpower.description %> </p>
+<p> <%= @superpower.address %></p>
+<p> <%= @superpower.price %></p>
+<p> <%= @superpower.created_at %></p>
+<p> <%= @superpower.updated_at %></p>
+<%= link_to 'Delete',  destroy superpowers_path(@superpowers), method: :delete, data:{ confirm: 'Are you sure you want to delete this superpower?' }%>
