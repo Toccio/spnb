@@ -36,14 +36,14 @@ class SuperpowersController < ApplicationController
   def edit
   end
 
-    # PATCH/PUT/superpowers/1
-    def update
-      if @superpower.update(superpower_params)
-        redirect_to @superpower, notice: 'Superpower now more super!'
-      else
-        render :edit
-      end
+  # PATCH/PUT/superpowers/1
+  def update
+    if @superpower.update(superpower_params)
+      redirect_to @superpower, notice: 'Superpower now more super!'
+    else
+      render :edit
     end
+  end
 
   def destroy
     @superpower.destroy
@@ -57,7 +57,6 @@ def set_superpower
   @superpower = Superpower.find(params[:id])
   authorize @superpower
   # with authorize @superpower we decide which user is allowed to see this form
-
 end
 
 def superpower_params
