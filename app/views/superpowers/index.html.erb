@@ -1,12 +1,31 @@
-<h1>Browse all superpowers</h1>
-<ul>
-<% @superpowers.each do |superpower|  %>
-<li>
-<h2> <%= superpower.name %> </h2>
-<p> <%= superpower.description %></p>
-<p> <%= superpower.created_at %></p>
-<p>Price - <%= superpower.price %></p>
+<div class="text-center text-black">
+  <h1>Browse all superpowers</h1>
+</div>
 
-</li>
-<% end %>
-</ul>
+  <table>
+    <thead>
+      <tr>
+        <th>Superpower</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th colspan="5"></th>
+      </tr>
+
+    </thead>
+    <tbody>
+      <% @superpowers.each do |superpower| %>
+        <tr>
+          <td> <%= superpower.name %></td>
+          <td> <%= superpower.description %></td>
+          <td> Price - <%= superpower.price %></td>
+          <td><%= link_to 'Show', superpower, class: "text-decoration-none" %></td>
+          <% if policy(superpower).edit? %>
+            <td><%= link_to 'Edit', edit_superpower_path(superpower), class: "text-decoration-none" %></td>
+          <% end %>
+          <% if policy(superpower).destroy? %>
+            <td><%= link_to 'Delete', superpower, method: :delete, data: { confirm: 'Are you sure?' }, class: "text-decoration-none"%></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
