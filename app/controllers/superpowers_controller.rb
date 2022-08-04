@@ -8,6 +8,8 @@ class SuperpowersController < ApplicationController
 
   # GET / superpower / id
   def show
+    # @superpower = Superpower.find(params[:id])
+    # authorize @superpower
     # achieved with before_action
   end
 
@@ -29,6 +31,26 @@ class SuperpowersController < ApplicationController
       render :new
     end
   end
+
+
+  def destroy
+    @superpower = Superpower.find(params[:id])
+    @superpower.destory
+    redirect_to superpowers_path
+  end
+
+private
+
+def set_superpower
+  @superpower = Superpower.find(params[:id])
+  authorize @superpower
+  # with authorize @superpower we decide which user is allowed to see this form
+
+end
+
+def superpower_params
+  params.require(:superpower).permit(:name, :description, :price, :address, :created_at, :updated_at)
+end
 
   # GET/superpowers/1/edit
   def edit
