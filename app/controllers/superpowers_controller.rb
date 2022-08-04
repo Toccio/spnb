@@ -8,8 +8,7 @@ class SuperpowersController < ApplicationController
 
   # GET / superpower / id
   def show
-    # @superpower = Superpower.find(params[:id])
-    # authorize @superpower
+    # achieved with before_action
   end
 
   # GET / superpower / new
@@ -31,17 +30,28 @@ class SuperpowersController < ApplicationController
     end
   end
 
-private
+  # GET/superpowers/1/edit
+  def edit
+  end
 
-def set_superpower
-  @superpower = Superpower.find(params[:id])
-  authorize @superpower
-  # with authorize @superpower we decide which user is allowed to see this form
+  # PATCH/PUT/superpowers/1
+  def update
+    if @superpower.update(superpower_params)
+      redirect_to @superpower, notice: 'Superpower now more super!'
+    else
+      render :edit
+    end
+  end
 
-end
+  private
 
-def superpower_params
-  params.require(:superpower).permit(:name, :description, :price, :address, :created_at, :updated_at)
-end
+  def set_superpower
+    @superpower = Superpower.find(params[:id])
+    authorize @superpower
+    # with authorize @superpower we decide which user is allowed to see this form
+  end
 
+  def superpower_params
+    params.require(:superpower).permit(:name, :description, :price, :address, :created_at, :updated_at)
+  end
 end
