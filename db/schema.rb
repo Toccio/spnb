@@ -70,3 +70,5 @@ ActiveRecord::Schema.define(version: 2022_08_04_183332) do
   add_foreign_key "reviews", "reservations"
   add_foreign_key "superpowers", "users"
 end
+end
+end

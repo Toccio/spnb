@@ -1,6 +1,22 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
 <% if user_signed_in? %>
-<%= current_user.email %>
+<%="Welcome, #{current_user.email}" %>
 <% end %>
+
+<div class="banner">
+  <h1><strong>Wanna be SUPERPOWERED?</strong></h1>
+</div>
+
+<div class="recommendation">
+  <h3 id="today">Today's pick for you: Spiderman's powers!</h2>
+  <div class="card-sp">
+    <img src="https://th.bing.com/th/id/R.4d0b7877087c063a2266518d973212f0?rik=h6cO3HjTdJ2Dcg&pid=ImgRaw&r=0" alt="" class="card-image">
+    <div class="info">
+    <div>
+      <h4><strong>Spiderman's Wallcrawling</strong></h4>
+      <p>Climb every wall like a Spiderman</p>
+    </div>
+    <h3>$100/hr</h3>
+    <img src="https://th.bing.com/th/id/R.ae5e2dcc6cfd1d453709a2c46657b770?rik=BZhjGl1YteiY%2bQ&pid=ImgRaw&r=0" alt="" class="avatar">
+  </div>
+ </div>
+</div>
