@@ -10,6 +10,7 @@ const initFlatpickr = () => {
 
   flatpickr("#range_start", {
     altInput: true,
+    dateFormat: 'D, d M Y',
     plugins: [new rangePlugin({ input: "#range_end"})]
   });
 }
