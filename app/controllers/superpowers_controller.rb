@@ -3,7 +3,11 @@ class SuperpowersController < ApplicationController
 
   # GET / superpowers
   def index
-    @superpowers = policy_scope(Superpower)
+    if params[:query].present?
+      @superpowers = policy_scope(Superpower).where(name:params[:query])
+    else
+      @superpowers = policy_scope(Superpower)
+    end
   end
 
   # GET / superpower / id
@@ -32,13 +36,6 @@ class SuperpowersController < ApplicationController
     end
   end
 
-  def destroy
-    @superpower = Superpower.find(params[:id])
-    @superpower.destroy
-    redirect_to superpowers_path
-  end
-
-
   # GET/superpowers/1/edit
   def edit
   end
@@ -56,8 +53,15 @@ class SuperpowersController < ApplicationController
   def destroy
     @superpower.destroy
     redirect_to superpowers_path
-
   end
+
+  # def search
+  #   @search = params[:query]
+  #   @superpowers = Superpower.all
+  #   if @search.present?
+  #     @superpowers = @superpowers.select { |name| name.start_with?(@search.downcase) }
+  #   end
+  # end
 
   private
 
@@ -66,13 +70,6 @@ class SuperpowersController < ApplicationController
     authorize @superpower
     # with authorize @superpower we decide which user is allowed to see this form
   end
-
-def set_superpower
-  @superpower = Superpower.find(params[:id])
-  authorize @superpower
-  # with authorize @superpower we decide which user is allowed to see this form
-end
-
 
   def superpower_params
     params.require(:superpower).permit(:name, :description, :price, :address, :created_at, :updated_at)

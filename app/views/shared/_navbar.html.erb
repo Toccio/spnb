@@ -11,6 +11,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
+
+         <div class="searchbar">
+            <%= form_tag superpowers_path, method: :get do %>
+              <%= text_field_tag :query, nil, placeholder: "Find a superpower"%>
+            <% end %>
+         </div>
+
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
@@ -24,7 +31,6 @@
           </li>
 
           <li class="nav-item dropdown">
-            <%= image_tag "https://th.bing.com/th/id/R.3525c144bcc7ff9c89e06304667c4bc1?rik=MgbcgGnYMx5mMg&pid=ImgRaw&r=0", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <%= image_tag "luca.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
 
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
