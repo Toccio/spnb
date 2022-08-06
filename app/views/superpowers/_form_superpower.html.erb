@@ -1,9 +1,17 @@
-<%= simple_form_for @superpower do |f| %>
-   <%= f.input :name %>
-   <%= f.input :description %>
-   <%= f.input :address %>
-   <%= f.input :price %>
-   <%= f.input :created_at, :order => [:day, :year, :month ] %>
-   <%# <%= f.input :updated_at, :order => [:day, :month, :year] %>
-   <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <%= simple_form_for @superpower do |f| %>
+         <%= f.input :name %>
+         <%= f.input :description %>
+         <%= f.input :address %>
+         <%= f.input :price %>
+         <%= f.input :created_at, :order => [:day, :year, :month ] %>
+         <%# <%= f.input :updated_at, :order => [:day, :month, :year] %>
+         <%= f.submit %>
+      <% end %>
+      <br>
+      <%= link_to "Back", superpowers_path, class: "text-decoration-none", class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>

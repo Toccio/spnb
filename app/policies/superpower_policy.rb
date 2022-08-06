@@ -4,6 +4,11 @@ class SuperpowerPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+
+  end
+
+  def index?
+    true
   end
 
   def show?
@@ -15,11 +20,10 @@ class SuperpowerPolicy < ApplicationPolicy
   end
 
   def update?
-    user == record.user
+    user == record.user || user.admin
   end
 
   def destroy?
     user == record.user
   end
-
 end
