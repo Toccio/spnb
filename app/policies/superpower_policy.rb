@@ -20,7 +20,8 @@ class SuperpowerPolicy < ApplicationPolicy
   end
 
   def update?
-    user == record.user || user.admin
+    user == record.user
+    # user == record.user || user.admin this can be used once admin is declareds
   end
 
   def destroy?
