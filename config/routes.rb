@@ -3,10 +3,12 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :superpowers do
     resources :reservations, only: [ :destroy, :edit, :update ] do
+    resources :reservations, only: [ :new, :create ] do
       resources :reviews, only: [:create, :index, :show]
     end
     resources :reservations, only: [ :destroy, :edit, :update, :index, :show]
   end
+  resources :reservations, only: [ :destroy, :edit, :update, :index, :show]
 
   end
 
