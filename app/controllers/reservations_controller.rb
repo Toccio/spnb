@@ -34,9 +34,15 @@ class ReservationsController < ApplicationController
 
 
   def destroy
+    @reservation.destroy
+    redirect_to reservations_path
   end
 
   private
+
+  def set_reservation
+    @reservation = Reservation.find(params[:id])
+  end
 
   def find_superpower
     @superpower = Superpower.find(params[:superpower_id])

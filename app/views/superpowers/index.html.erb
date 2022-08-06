@@ -2,23 +2,23 @@
   <h1>Browse all superpowers</h1>
 </div>
 
-  <table>
+<div class="container">
+  <table class="table">
     <thead>
       <tr>
-        <th>Superpower</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th colspan="5"></th>
+        <th scope="col">Superpower</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+        <th scope="col"></th>
       </tr>
 
     </thead>
     <tbody>
       <% @superpowers.each do |superpower| %>
         <tr>
-          <td> <%= superpower.name %></td>
+          <td> <%= link_to superpower.name, superpower, class: "text-decoration-none" %></td>
           <td> <%= superpower.description %></td>
           <td> Price - <%= superpower.price %></td>
-          <td><%= link_to 'Show', superpower, class: "text-decoration-none" %></td>
           <% if policy(superpower).edit? %>
             <td><%= link_to 'Edit', edit_superpower_path(superpower), class: "text-decoration-none" %></td>
           <% end %>
@@ -29,3 +29,6 @@
       <% end %>
     </tbody>
   </table>
+  <br>
+<%= link_to 'New superpower', new_superpower_path, class: "text-decoration-none", class: "btn btn-flat" %>
+</div>
