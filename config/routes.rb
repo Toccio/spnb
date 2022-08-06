@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :superpowers do
     resources :reservations, only: [ :new, :create ]
+    collection do
+      get :search
+    end
   end
   resources :reservations, only: [ :destroy, :edit, :update, :index]
 end
