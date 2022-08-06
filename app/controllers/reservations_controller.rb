@@ -1,20 +1,35 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @reservations = current_user.superpowers
+    @reservation = policy_scope(Superpower)
+  end
+
   def new
+    @superpower = Superpower.find(params[:superpower_id])
+    authorize @superpower
+
     @reservation = Reservation.new
   end
 
   def create
-    @superpower = Superpower.find(find_superpower)
+
     @reservation = Reservation.new(reservation_params)
+
+    @superpower = Superpower.find(params[:superpower_id])
+
     @reservation.superpower = @superpower
     @reservation.user = current_user
+
+
     if @reservation.save
       redirect_to superpower_path(@superpower)
     else
       render :new
     end
+    authorize @reservation
+
   end
 
 
@@ -25,6 +40,7 @@ class ReservationsController < ApplicationController
 
   def find_superpower
     @superpower = Superpower.find(params[:superpower_id])
+    authorize @superpower
   end
 
   def reservation_params
