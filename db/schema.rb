@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 2022_08_04_191552) do
 ActiveRecord::Schema.define(version: 2022_08_06_092256) do
 ActiveRecord::Schema.define(version: 2022_08_04_183332) do
 
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(version: 2022_08_04_183332) do
     t.index ["superpower_id"], name: "index_reservations_on_superpower_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
+
 
   create_table "reviews", force: :cascade do |t|
     t.text "content"
