@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :superpowers do
     resources :reservations, only: [ :new, :create ]
   end
-  resources :reservations, only: [ :destroy, :edit, :update ]
+  resources :reservations, only: [ :destroy, :edit, :update ] do
+    resources :reviews, only: [:create, :index, :show]
+  end
 end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
