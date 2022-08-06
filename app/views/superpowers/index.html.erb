@@ -16,10 +16,9 @@
     <tbody>
       <% @superpowers.each do |superpower| %>
         <tr>
-          <td> <%= superpower.name %></td>
+          <td> <%= link_to superpower.name, superpower, class: "text-decoration-none" %></td>
           <td> <%= superpower.description %></td>
           <td> Price - <%= superpower.price %></td>
-          <td><%= link_to 'Show', superpower, class: "text-decoration-none" %></td>
           <% if policy(superpower).edit? %>
             <td><%= link_to 'Edit', edit_superpower_path(superpower), class: "text-decoration-none" %></td>
           <% end %>
