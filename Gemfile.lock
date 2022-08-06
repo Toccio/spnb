@@ -128,11 +128,13 @@ GEM
     minitest (5.16.2)
     msgpack (1.5.4)
     nio4r (2.5.8)
+
     nokogiri (1.13.8-x86_64-darwin)
-<<<<<<< HEAD
-=======
       racc (~> 1.4)
->>>>>>> master
+    nokogiri (1.13.8-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.13.8-x86_64-linux)
+
     orm_adapter (0.5.0)
     pg (1.4.2)
     pry (0.13.1)
@@ -148,6 +150,7 @@ GEM
       nio4r (~> 2.0)
     pundit (2.2.0)
       activesupport (>= 3.0.0)
+    racc (1.6.0)
     rack (2.2.4)
     rack-mini-profiler (2.3.4)
       rack (>= 1.2.0)
@@ -247,12 +250,12 @@ GEM
     zeitwerk (2.6.0)
 
 PLATFORMS
-<<<<<<< HEAD
-=======
+
+
   arm64-darwin-20
   arm64-darwin-21
->>>>>>> master
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   autoprefixer-rails (= 10.2.5)
