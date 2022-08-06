@@ -9,5 +9,5 @@
   <p> <%= @superpower.updated_at %></p>
 </div>
 
-<%= link_to "Book", reservations_new_path, class: "text-decoration-none" %>
+<%= link_to "Book", new_superpower_reservation_path(@superpower), class: "text-decoration-none" %>
 <%= link_to "Back", superpowers_path, class: "text-decoration-none" %>
