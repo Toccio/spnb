@@ -32,13 +32,6 @@ class SuperpowersController < ApplicationController
     end
   end
 
-  def destroy
-    @superpower = Superpower.find(params[:id])
-    @superpower.destroy
-    redirect_to superpowers_path
-  end
-
-
   # GET/superpowers/1/edit
   def edit
   end
@@ -50,7 +43,6 @@ class SuperpowersController < ApplicationController
     else
       render :edit
     end
-
   end
 
   def destroy
