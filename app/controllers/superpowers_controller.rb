@@ -8,7 +8,6 @@ class SuperpowersController < ApplicationController
     else
       @superpowers = policy_scope(Superpower)
     end
-
   end
 
   # GET / superpower / id
