@@ -6,19 +6,25 @@
   <table class="table">
     <thead>
       <tr>
+        <th scope="col">User</th>
         <th scope="col">Superpower</th>
         <th scope="col">Description</th>
+        <th scope="col">Address</th>
+        <th scope="col">Review</th>
         <th scope="col">Price</th>
-        <th scope="col"></th>
       </tr>
 
     </thead>
+
     <tbody>
       <% @superpowers.each do |superpower| %>
         <tr>
           <td> <%= link_to superpower.name, superpower, class: "text-decoration-none" %></td>
+          <td> <%= superpower.superpower_name %></td>
           <td> <%= superpower.description %></td>
-          <td> Price - <%= superpower.price %></td>
+          <td> <%= superpower.address %></td>
+          <td>⭐ <%= superpower.rating %></td>
+          <td> <%= superpower.price %>€</td>
           <% if policy(superpower).edit? %>
             <td><%= link_to 'Edit', edit_superpower_path(superpower), class: "text-decoration-none" %></td>
           <% end %>
