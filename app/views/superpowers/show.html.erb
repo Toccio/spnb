@@ -1,5 +1,4 @@
 
-
 <div class="container">
   <h1> <%= @superpower.name %></h1>
   <p> <%= @superpower.description %> </p>
@@ -7,7 +6,6 @@
   <p>Price - <%= @superpower.price %></p>
   <p> <%= @superpower.created_at %></p>
   <p> <%= @superpower.updated_at %></p>
-</div>
 <%= link_to "Book", new_superpower_reservation_path(@superpower), class: "text-decoration-none" %>
 <%= link_to "Back", superpowers_path, class: "text-decoration-none" %>
 </div>
