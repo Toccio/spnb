@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_08_123845) do
+ActiveRecord::Schema.define(version: 2022_08_08_143328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,7 +52,12 @@ ActiveRecord::Schema.define(version: 2022_08_08_123845) do
     t.float "latitude"
     t.float "longitude"
     t.string "superpower_name"
-    # t.float "ratings"
+    t.float "ratings"
+    t.integer "Number"
+    t.integer "number"
+    t.integer "fnumber"
+    t.string "title"
+    t.text "more_info"
     t.index ["user_id"], name: "index_superpowers_on_user_id"
   end
 

@@ -25,12 +25,14 @@
           <td> <%= superpower.address %></td>
           <td>⭐ <%= superpower.rating %></td>
           <td> <%= superpower.price %>€</td>
+
           <% if policy(superpower).edit? %>
             <td><%= link_to 'Edit', edit_superpower_path(superpower), class: "text-decoration-none" %></td>
           <% end %>
           <% if policy(superpower).destroy? %>
             <td><%= link_to 'Delete', superpower, method: :delete, data: { confirm: 'Are you sure?' }, class: "text-decoration-none"%></td>
           <% end %>
+
         </tr>
       <% end %>
     </tbody>
