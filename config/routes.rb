@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :superpowers do
-    resources :reservations, only: [ :new, :create ] do
+    resources :reservations, only: [ :new, :create, :show] do
       resources :reviews, only: [:create, :index, :show]
     end
   end
-  resources :reservations, only: [ :destroy, :edit, :update, :index, :show]
+  resources :reservations, only: [ :destroy, :edit, :update, :index ]
 
   end
 
