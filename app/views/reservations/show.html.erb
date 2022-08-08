@@ -1,9 +1,8 @@
 <div class="container">
 <h1> <%= @reservation.superpower.name %></h1>
   <p> <%= @reservation.superpower.description %> </p>
-  <p>Vlad and Luca working</p>
   <p> <%= @reservation.superpower.address %></p>
   <p>Price - <%= @reservation.superpower.price %> night</p>
-  <p> <%= @reservation.check_in.strftime('%a, %d %b %Y') %> </p>
-  <p> <%= @reservation.check_out.strftime('%a, %d %b %Y') %> </p>
+  <%# <p> <%= @reservation.check_in.strftime('%a, %d %b %Y') %> </p> %>
+  <%# <p> <%= @reservation.check_out.strftime('%a, %d %b %Y') %> </p> %>
 </div>
