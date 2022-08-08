@@ -6,25 +6,33 @@
   <table class="table">
     <thead>
       <tr>
+        <th scope="col">User</th>
         <th scope="col">Superpower</th>
         <th scope="col">Description</th>
+        <th scope="col">Address</th>
+        <th scope="col">Review</th>
         <th scope="col">Price</th>
-        <th scope="col"></th>
       </tr>
 
     </thead>
+
     <tbody>
       <% @superpowers.each do |superpower| %>
         <tr>
           <td> <%= link_to superpower.name, superpower, class: "text-decoration-none" %></td>
+          <td> <%= superpower.superpower_name %></td>
           <td> <%= superpower.description %></td>
-          <td> Price - <%= superpower.price %></td>
+          <td> <%= superpower.address %></td>
+          <td>⭐ <%= superpower.rating %></td>
+          <td> <%= superpower.price %>€</td>
+
           <% if policy(superpower).edit? %>
             <td><%= link_to 'Edit', edit_superpower_path(superpower), class: "text-decoration-none" %></td>
           <% end %>
           <% if policy(superpower).destroy? %>
             <td><%= link_to 'Delete', superpower, method: :delete, data: { confirm: 'Are you sure?' }, class: "text-decoration-none"%></td>
           <% end %>
+
         </tr>
       <% end %>
     </tbody>
@@ -32,3 +40,8 @@
   <br>
 <%= link_to 'New superpower', new_superpower_path, class: "text-decoration-none", class: "btn btn-flat" %>
 </div>
+<br>
+<div style="width: 100%; height: 600px;"
+  data-controller="mapbox"
+  data-mapbox-markers-value="<%= @markers.to_json %>"
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
