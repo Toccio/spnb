@@ -26,12 +26,7 @@ gem 'devise'
 # gem 'image_processing', '~> 1.2'
 gem 'pundit'
 gem "geocoder"
-<<<<<<< HEAD
-gem 'dotenv-rails', groups: [:development, :test]
-gem 'faker'
-=======
 gem 'cloudinary', '~> 1.16.0'
->>>>>>> f94919ed73d8dc31b862f7a2b390929ab04a3479
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

@@ -17,7 +17,9 @@
   <div class="d-flex pb-5 ">
 
     <div class="images pr-3 ">
-      <img src="/assets/spider_sense.png" alt="Superpower pictures" class="w-100" width="400" height="400">
+      <% @superpower.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
     </div>
 
     <div class="">
