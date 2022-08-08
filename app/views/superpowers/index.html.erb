@@ -7,6 +7,7 @@
     <thead>
       <tr>
         <th scope="col">Superpower</th>
+        <th scope="col">Photo</th>
         <th scope="col">Description</th>
         <th scope="col">Price</th>
         <th scope="col"></th>
@@ -17,6 +18,8 @@
       <% @superpowers.each do |superpower| %>
         <tr>
           <td> <%= link_to superpower.name, superpower, class: "text-decoration-none" %></td>
+          <td><%= cl_image_tag("xsvwt9wf2h29kyo6ffi0",
+      width: 400, height: 300, crop: :fill) %></td>
           <td> <%= superpower.description %></td>
           <td> Price - <%= superpower.price %></td>
           <% if policy(superpower).edit? %>
