@@ -7,7 +7,7 @@
          <%= f.input :address %>
          <%= f.input :price %>
          <%= f.input :created_at, :order => [:day, :year, :month ] %>
-          <%= f.input :photo, as: :file %>
+           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
          <%# <%= f.input :updated_at, :order => [:day, :month, :year] %>
          <%= f.submit %>
       <% end %>

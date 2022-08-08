@@ -1,5 +1,8 @@
 
 <div class="container">
+<% @superpower.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
   <h1> <%= @superpower.name %></h1>
   <p> <%= @superpower.description %> </p>
   <p> <%= @superpower.address %></p>
