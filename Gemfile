@@ -27,6 +27,7 @@ gem 'devise'
 gem 'pundit'
 gem "geocoder"
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'faker'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
