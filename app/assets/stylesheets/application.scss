@@ -7,6 +7,8 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "mapbox-gl/dist/mapbox-gl.css";
+
 
 // Your CSS partials
 @import "components/index";
@@ -17,6 +19,11 @@
   color:red;
   padding: 24px;
 }
+
+body {
+  position: relative;
+}
+
 
 #today {
   padding: 12px;

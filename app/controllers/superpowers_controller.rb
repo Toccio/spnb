@@ -3,7 +3,11 @@ class SuperpowersController < ApplicationController
 
   # GET / superpowers
   def index
-    @superpowers = policy_scope(Superpower)
+    if params[:query].present?
+      @superpowers = policy_scope(Superpower).select { |superpower| superpower.name.start_with?(params[:query].downcase) }
+    else
+      @superpowers = policy_scope(Superpower)
+    end
   end
 
   # GET / superpower / id
