@@ -8,7 +8,6 @@ class SuperpowersController < ApplicationController
     else
       @superpowers = policy_scope(Superpower)
     end
-
   end
 
   # GET / superpower / id
@@ -72,6 +71,6 @@ class SuperpowersController < ApplicationController
   end
 
   def superpower_params
-    params.require(:superpower).permit(:name, :description, :price, :address, :created_at, :updated_at)
+    params.require(:superpower).permit(:more_info, :name, :superpower_name, :description, :price, :address, :created_at, :updated_at, photos: [])
   end
 end
