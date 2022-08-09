@@ -3,10 +3,14 @@ class SuperpowersController < ApplicationController
 
   # GET / superpowers
   def index
-    if params[:query].present?
-      @superpowers = policy_scope(Superpower).select { |superpower| superpower.name.start_with?(params[:query].downcase) }
-    else
-      @superpowers = policy_scope(Superpower)
+    @superpowers = policy_scope(Superpower)
+    @markers = @superpowers.map do |superpower|
+      {
+        lat: superpower.latitude,
+        lng: superpower.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { superpower: superpower }),
+        image_url: helpers.asset_url("spiderman.jpeg")
+      }
     end
   end
 
@@ -71,6 +75,6 @@ class SuperpowersController < ApplicationController
   end
 
   def superpower_params
-    params.require(:superpower).permit(:name, :description, :price, :address, :created_at, :updated_at)
+    params.require(:superpower).permit(:more_info, :name, :superpower_name, :description, :price, :address, :created_at, :updated_at, photos: [])
   end
 end

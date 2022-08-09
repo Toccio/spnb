@@ -1,13 +1,96 @@
+<div class="container">
 
+  <div class="">
+
+    <h4>  <%= image_tag "luca.png",
+      class: "avatar dropdown-toggle",
+      id: "navbarDropdown",
+      data: { bs_toggle: "dropdown" },
+      'aria-haspopup': true,
+      'aria-expanded': false %>
+      <%= @superpower.name %>
+
+    </h4>
+    <p>⭐ <%= @superpower.rating %> ♦️ <a href="#">  <%= @superpower.number %> reviews  </a></p>
+  </div>
+
+  <div class="d-flex pb-5 ">
+
+    <div class="images pr-3 ">
+      <% @superpower.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+    </div>
+
+    <div class="">
+      <div class="d-flex justify-content-around">
+        <img src="/assets/spider_sense.png" alt="Superpower pictures" class="w-50" width="200" height="200">
+        <img src="/assets/spider_sense.png" alt="Superpower pictures" class="w-50" width="200" height="200">
+      </div>
+
+      <div class="d-flex justify-content-around">
+        <img src="/assets/spider_sense.png" alt="Superpower pictures" class="w-50" width="200" height="200">
+        <img src="/assets/spider_sense.png" alt="Superpower pictures" class="w-50" width="200" height="200">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="d-flex justify-content-between border-bottom">
+
+    <div class="description-container w-50">
+
+      <div class="sp-spiderman border-bottom">
+        <p><strong>SUPERPOWER:</strong> <%= @superpower.superpower_name %></p>
+      </div>
+
+      <div class="card-spider-sense d-flex pt-3">
+        <img src="/assets/spider_sense.png" alt="" width="50" height="50">
+        <div>
+          <p><strong> <%= @superpower.superpower_name %> </strong></p>
+          <p><%= @superpower.description %></p>
+        </div>
+      </div>
+
+
+      <div class="more-info pt-3 border-bottom">
+        <h5><strong> More info </strong></h5>
+        <p class"spider-info-text">
+        <%= @superpower.more_info %></p>
+        <%# <span class="more-text"> Lorem ipsum,
+        dolor sit amet consectetur adipisicing elit. Voluptatem unde sed
+        itaque vero nostrum, cumque autem quis.
+        Consectetur quis incidunt quaerat nam ratione adipisci,
+        nostrum, in, delectus repellendus quas distinctio.</span></p>
+        <button class="read-more-btn" data-controller='read_btn' data-action='read_btn'>Read More</button> %>
+      </div>
+
+      <div class="more-info  pt-3">
+        <h5><strong> How to use your superpower </strong></h5>
+        <p>With great power comes great responsibility!</p>
+        <p> <strong>♦️ <%= @superpower.superpower_name %> </strong> </p>
+        <p>Close the two middle fingers, raise your wrist and take aim.</p>
+      </div>
+
+    </div>
+
+    <div class="reservation-form ">
+      <%= render 'form_superpower' %>
+    </div>
+
+  </div>
+
+  <div class="d-flex review pt-3">
+  <h5><strong>⭐ <%= @superpower.rating %> - <%= @superpower.number %> reviews</strong></h5>
+  <a href="#"> <%= @superpower.fnumber %> User pictures</a>
+</div>
 
 <div class="container">
-  <h1> <%= @superpower.name %></h1>
-  <p> <%= @superpower.description %> </p>
-  <p> <%= @superpower.address %></p>
-  <p>Price - <%= @superpower.price %></p>
-  <p> <%= @superpower.created_at %></p>
-  <p> <%= @superpower.updated_at %></p>
-</div>
-<%= link_to "Book", new_superpower_reservation_path(@superpower), class: "text-decoration-none" %>
-<%= link_to "Back", superpowers_path, class: "text-decoration-none" %>
+  <div class="row">
+    <div class="col-6">
+
+    </div>
+  </div>
+
+
 </div>

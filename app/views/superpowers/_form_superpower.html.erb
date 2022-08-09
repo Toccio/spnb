@@ -3,10 +3,14 @@
     <div class="col-6">
       <%= simple_form_for @superpower do |f| %>
          <%= f.input :name %>
+         <%= f.input :superpower_name %>
          <%= f.input :description %>
          <%= f.input :address %>
          <%= f.input :price %>
+         <%= f.input :more_info %>
          <%= f.input :created_at, :order => [:day, :year, :month ] %>
+         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+
          <%# <%= f.input :updated_at, :order => [:day, :month, :year] %>
          <%= f.submit %>
       <% end %>
