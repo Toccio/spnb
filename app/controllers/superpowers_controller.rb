@@ -12,6 +12,11 @@ class SuperpowersController < ApplicationController
         image_url: helpers.asset_url("spiderman.jpeg")
       }
     end
+    if params[:query].present?
+      @superpowers = Superpower.search_by_name_and_superpower_name(params[:query])
+    else
+      @superpowers = Superpower.all
+    end
   end
 
   # GET / superpower / id
