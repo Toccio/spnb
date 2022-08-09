@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "https://th.bing.com/th/id/R.3525c144bcc7ff9c89e06304667c4bc1?rik=MgbcgGnYMx5mMg&pid=ImgRaw&r=0" %>
+      <%= image_tag "s.png" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,7 +10,7 @@
 
      <div class="searchbar">
       <%= form_tag superpowers_path, method: :get do %>
-        <%= text_field_tag :query, nil, placeholder: "Find a superpower"%>
+        <%= text_field_tag :query, nil, placeholder: "Superpower search.."%>
       <% end %>
     </div>
 
@@ -31,7 +31,6 @@
 
           <li class="nav-item dropdown">
             <%= image_tag "luca.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My profile page", "#", class: "dropdown-item" %>
               <%= link_to "My reservations", "#", class: "dropdown-item" %>
