@@ -1,8 +1,10 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: brown;
-  border-style: solid;
-  border-color: black;
+.container-fluid {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: transparent;
+  margin: 4px;
+  padding: 8px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -15,7 +17,8 @@
 
 .searchbar {
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  width: 400px;
+  width: 100px;
+  opacity: 0.6;
   li {
     color: white;
   }
@@ -24,10 +27,11 @@
 #query {
   width: 400px;
   border-style: solid ;
+  border-radius: 16px;
 }
 
 .btn-ghost {
-  color: white;
+  color: orange;
   border: 1px solid white;
   padding: 4px 18px;
   border-radius: 50px;
@@ -42,4 +46,19 @@
 
 .nav-item {
   padding: 5px;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.navbar-brand {
+  margin-left: 24px;
+}
+
+.navbar-nav {
+  left: 0;
+}
+
+#navbarSupportedContent {
+  left: 0;
+  margin: 0;
 }
