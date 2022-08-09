@@ -1,6 +1,5 @@
 class SuperpowersController < ApplicationController
   before_action :set_superpower, only: [:show, :edit, :update, :destroy]
-
   # GET / superpowers
   def index
     if params[:query].present?

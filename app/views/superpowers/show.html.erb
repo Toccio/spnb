@@ -1,96 +1,119 @@
-<div class="container">
-
-  <div class="">
-
-    <h4>  <%= image_tag "luca.png",
-      class: "avatar dropdown-toggle",
-      id: "navbarDropdown",
-      data: { bs_toggle: "dropdown" },
-      'aria-haspopup': true,
-      'aria-expanded': false %>
-      <%= @superpower.name %>
-
-    </h4>
+<div class="show-container container w-100 ">
+  <div class="d-flex justify-content-between">
+    <div class="d-flex ">
+        <a href="#">
+          <img src=" <%= @superpower.avatar %>" alt="" width="50" height="50" class="rounded-circle">
+        </a>
+        <h4> <strong><%= @superpower.name %></strong></h4>
+    </div>
     <p>⭐ <%= @superpower.rating %> ♦️ <a href="#">  <%= @superpower.number %> reviews  </a></p>
   </div>
 
-  <div class="d-flex pb-5 ">
 
-    <div class="images pr-3 ">
-      <% @superpower.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-    </div>
+    <%# Caroserl %>
 
-    <div class="">
-      <div class="d-flex justify-content-around">
-        <img src="/assets/spider_sense.png" alt="Superpower pictures" class="w-50" width="200" height="200">
-        <img src="/assets/spider_sense.png" alt="Superpower pictures" class="w-50" width="200" height="200">
-      </div>
-
-      <div class="d-flex justify-content-around">
-        <img src="/assets/spider_sense.png" alt="Superpower pictures" class="w-50" width="200" height="200">
-        <img src="/assets/spider_sense.png" alt="Superpower pictures" class="w-50" width="200" height="200">
-      </div>
-    </div>
-
-  </div>
-
-  <div class="d-flex justify-content-between border-bottom">
-
-    <div class="description-container w-50">
-
-      <div class="sp-spiderman border-bottom">
-        <p><strong>SUPERPOWER:</strong> <%= @superpower.superpower_name %></p>
-      </div>
-
-      <div class="card-spider-sense d-flex pt-3">
-        <img src="/assets/spider_sense.png" alt="" width="50" height="50">
-        <div>
-          <p><strong> <%= @superpower.superpower_name %> </strong></p>
-          <p><%= @superpower.description %></p>
+    <div id="carouselExampleIndicators" class="carousel slide pb-3" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/assets/spiderman.jpg" alt="luca" class="w-100 rounded">
+        </div>
+        <div class="carousel-item">
+          <img src="/assets/yoshi.jpg" alt="luca" class="w-100 rounded">
+        </div>
+        <div class="carousel-item">
+          <img src="/assets/spiderman.jpg" alt="luca" class="w-100 rounded">
         </div>
       </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
 
 
-      <div class="more-info pt-3 border-bottom">
-        <h5><strong> More info </strong></h5>
-        <p class"spider-info-text">
-        <%= @superpower.more_info %></p>
-        <%# <span class="more-text"> Lorem ipsum,
-        dolor sit amet consectetur adipisicing elit. Voluptatem unde sed
-        itaque vero nostrum, cumque autem quis.
-        Consectetur quis incidunt quaerat nam ratione adipisci,
-        nostrum, in, delectus repellendus quas distinctio.</span></p>
-        <button class="read-more-btn" data-controller='read_btn' data-action='read_btn'>Read More</button> %>
+    <div class="container border-bottom">
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <div class="sp-spiderman border-bottom">
+            <h2><strong> <%= @superpower.superpower_name %> </strong></h2>
+            <p> <%= @superpower.quotes %> </p>
+          </div>
+          <div class="more-info pt-3 border-bottom">
+            <h5><strong> More info </strong></h5>
+            <div class="card-spider-sense d-flex pt-3 ">
+              <h4>💎</h4>
+              <%# <img src="/assets/spider_sense.png" alt="" width="50" height="50"> %>
+              <div>
+                <p><%= @superpower.description %></p>
+              </div>
+            </div>
+          </div>
+          <div class="more-info  pt-3">
+            <h5><strong> How to use your superpower </strong></h5>
+            <p>♦️ <%= @superpower.more_info %></p></p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="reservation-form ">
+            <%= render 'form_superpower' %>
+          </div>
+        </div>
       </div>
+    </div>
 
-      <div class="more-info  pt-3">
-        <h5><strong> How to use your superpower </strong></h5>
-        <p>With great power comes great responsibility!</p>
-        <p> <strong>♦️ <%= @superpower.superpower_name %> </strong> </p>
-        <p>Close the two middle fingers, raise your wrist and take aim.</p>
+    <div class="d-flex review pt-3">
+      <h5><strong>⭐ <%= @superpower.rating %> - <%= @superpower.number %> reviews</strong></h5>
+      <a href="#"> <%= @superpower.fnumber %> User pictures</a>
+    </div>
+
+    <%# REVIEWS %>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <div class="d-flex">
+            <a href="#"><img src=" <%= @superpower.avatar %>" alt="" width="50" height="50" class="rounded-circle"></a>
+            <h4> <%= @superpower.name %></h4>
+          </div>
+          <p><%= @superpower.title %></p>
+          <a href="#"><img src=" <%= @superpower.avatar %>" alt="" width="150" height="150" ></a>
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <div class="d-flex">
+            <a href="#"><img src=" <%= @superpower.avatar %>" alt="" width="50" height="50" class="rounded-circle"></a>
+            <h4> <%= @superpower.name %></h4>
+          </div>
+          <p><%= @superpower.title %></p>
+          <a href="#"><img src=" <%= @superpower.avatar %>" alt="" width="150" height="150" ></a>
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <div class="d-flex">
+            <a href="#"><img src=" <%= @superpower.avatar %>" alt="" width="50" height="50" class="rounded-circle"></a>
+            <h4> <%= @superpower.name %></h4>
+          </div>
+          <p><%= @superpower.title %></p>
+          <a href="#"><img src=" <%= @superpower.avatar %>" alt="" width="150" height="150" ></a>
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <div class="d-flex">
+            <a href="#"><img src=" <%= @superpower.avatar %>" alt="" width="50" height="50" class="rounded-circle"></a>
+            <h4> <%= @superpower.name %></h4>
+          </div>
+          <p><%= @superpower.title %></p>
+          <a href="#"><img src=" <%= @superpower.avatar %>" alt="" width="150" height="150" ></a>
+        </div>
+
       </div>
-
     </div>
-
-    <div class="reservation-form ">
-      <%= render 'form_superpower' %>
-    </div>
-
-  </div>
-
-  <div class="d-flex review pt-3">
-  <h5><strong>⭐ <%= @superpower.rating %> - <%= @superpower.number %> reviews</strong></h5>
-  <a href="#"> <%= @superpower.fnumber %> User pictures</a>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-6">
-
-    </div>
-  </div>
-
-
 </div>
