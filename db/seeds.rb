@@ -26,7 +26,7 @@ superhero_quotes = [
   "The future is worth it. All the pain. All the tears. The future is worth the fight. - 'Martian Manhunter'"
 ]
 
-user_review=[
+user_review = [
   "Useless power. The spider-web are not sticky enough and you cannot climb on the glass of modern buildings, the stickiness is not strong enough. Plus you are not allowed to slice people with this power, the owner is not insured.",
   "Great costume. All as described, I really liked the very tight costume.",
   "I had a great time using this super power. All the girls were chasing me! the only down side is that the costume provided by the owner was to small for me.",

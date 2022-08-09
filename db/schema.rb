@@ -74,14 +74,14 @@ ActiveRecord::Schema.define(version: 2022_08_09_092051) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "power"
-    t.string "city"
+    # t.string "city"
     t.integer "rating"
-    t.string "first_name"
+    # t.string "first_name"
     t.float "latitude"
     t.float "longitude"
     t.string "superpower_name"
     t.float "ratings"
-    t.integer "Number"
+    # t.integer "Number"
     t.integer "number"
     t.integer "fnumber"
     t.string "title"
