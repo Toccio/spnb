@@ -20,6 +20,7 @@ class SuperpowersController < ApplicationController
 
   # GET / superpower / id
   def show
+    @reservation = Reservation.new
     # @superpower = Superpower.find(params[:id])
     # authorize @superpower
     # achieved with before_action
