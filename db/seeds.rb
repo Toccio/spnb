@@ -59,14 +59,14 @@ superpower_description = [
     )
 end
 20.times do
-  luca = User.create!(
-    first_name:'luca',
-    email:'lucafigo@gmail.com',
+  User.create!(
+    first_name: Faker::Superhero.name,
+    email: Faker::Internet.email,
     password:"123456")
 end
 
 20.times do
-  reservation_1=Reservation.create!(user:User.all.sample, superpower:Superpower.all.sample)
+  Reservation.create!(user:User.all.sample, superpower:Superpower.all.sample)
   2.times do
     Review.create!(
       reservation:Reservation.all.sample,
