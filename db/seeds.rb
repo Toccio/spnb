@@ -38,6 +38,12 @@ superpower_description = [
   "You can flight around and have superhuman strength, x-ray vision, heat vision, cold breath, super-speed, enhanced hearing, and nigh-invulnerability",
   "Superhuman strength and reflexes, enhanced senses and tracking abilities, and a special healing power that also slows your aging"
 ]
+20.times do
+  User.create!(
+    first_name: Faker::Superhero.name,
+    email: Faker::Internet.email,
+    password:"123456")
+end
 
 50.times do
   Superpower.create!(
@@ -57,12 +63,6 @@ superpower_description = [
       more_info: Faker::Lorem.sentence(word_count: 13, supplemental: true, random_words_to_add: 4),
       # CHANGE NAME IN REVIEW?
     )
-end
-20.times do
-  User.create!(
-    first_name: Faker::Superhero.name,
-    email: Faker::Internet.email,
-    password:"123456")
 end
 
 20.times do
