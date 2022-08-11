@@ -1,6 +1,5 @@
 class SuperpowersController < ApplicationController
   before_action :set_superpower, only: [:show, :edit, :update, :destroy]
-
   # GET / superpowers
   def index
     @superpowers = policy_scope(Superpower)
@@ -12,10 +11,17 @@ class SuperpowersController < ApplicationController
         image_url: helpers.asset_url("spiderman.jpeg")
       }
     end
+    if params[:query].present?
+      @superpowers = Superpower.search_by_name_and_superpower_name(params[:query])
+    else
+      @superpowers = Superpower.all
+    end
   end
 
   # GET / superpower / id
   def show
+    @reservation = Reservation.new
+    @reviews = @superpower.reviews
     # @superpower = Superpower.find(params[:id])
     # authorize @superpower
     # achieved with before_action
