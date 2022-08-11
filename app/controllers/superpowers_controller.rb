@@ -7,8 +7,7 @@ class SuperpowersController < ApplicationController
       {
         lat: superpower.latitude,
         lng: superpower.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { superpower: superpower }),
-        image_url: helpers.asset_url("spiderman.jpeg")
+        info_window: render_to_string(partial: "info_window", locals: { superpower: superpower })
       }
     end
     if params[:query].present?
