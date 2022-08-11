@@ -20,13 +20,13 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="/assets/spiderman.jpg" alt="luca" class="w-100 rounded">
+          <img src="/assets/spiderman_building.jpg" alt="luca" class="w-100 rounded">
         </div>
         <div class="carousel-item">
           <img src="/assets/yoshi.jpg" alt="luca" class="w-100 rounded">
         </div>
         <div class="carousel-item">
-          <img src="/assets/spiderman.jpg" alt="luca" class="w-100 rounded">
+          <img src="/assets/download(8).jpg" alt="luca" class="w-100 rounded">
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -64,7 +64,7 @@
         </div>
         <div class="col-12 col-lg-6">
           <div class="reservation-form ">
-            <%= render 'form_superpower' %>
+            <%= render 'reservations/form_reservation' %>
           </div>
         </div>
       </div>
@@ -83,36 +83,12 @@
             <a href="#"><img src=" <%= @superpower.avatar %>" alt="" width="50" height="50" class="rounded-circle"></a>
             <h4> <%= @superpower.name %></h4>
           </div>
-          <p><%= @superpower.title %></p>
+          <% @reviews.each do |review| %>
+            <p><%= review.content %></p>
+          <% end  %>
           <a href="#"><img src=" <%= @superpower.avatar %>" alt="" width="150" height="150" ></a>
         </div>
 
-        <div class="col-12 col-lg-6">
-          <div class="d-flex">
-            <a href="#"><img src=" <%= @superpower.avatar %>" alt="" width="50" height="50" class="rounded-circle"></a>
-            <h4> <%= @superpower.name %></h4>
-          </div>
-          <p><%= @superpower.title %></p>
-          <a href="#"><img src=" <%= @superpower.avatar %>" alt="" width="150" height="150" ></a>
-        </div>
-
-        <div class="col-12 col-lg-6">
-          <div class="d-flex">
-            <a href="#"><img src=" <%= @superpower.avatar %>" alt="" width="50" height="50" class="rounded-circle"></a>
-            <h4> <%= @superpower.name %></h4>
-          </div>
-          <p><%= @superpower.title %></p>
-          <a href="#"><img src=" <%= @superpower.avatar %>" alt="" width="150" height="150" ></a>
-        </div>
-
-        <div class="col-12 col-lg-6">
-          <div class="d-flex">
-            <a href="#"><img src=" <%= @superpower.avatar %>" alt="" width="50" height="50" class="rounded-circle"></a>
-            <h4> <%= @superpower.name %></h4>
-          </div>
-          <p><%= @superpower.title %></p>
-          <a href="#"><img src=" <%= @superpower.avatar %>" alt="" width="150" height="150" ></a>
-        </div>
 
       </div>
     </div>
