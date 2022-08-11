@@ -6,9 +6,6 @@ Superpower.destroy_all
 User.destroy_all
 puts 'Database created'
 
-luca = User.create!(first_name:'luca',email:'lucafigo@gmail.com', password:"123456")
-ana= User.create!(first_name:'anas',email:'anasfigo@gmail.com', password:"123456")
-
 superhero_quotes = [
   "Only the weak succumb to brutality. - Superman",
   "There is a right and a wrong in this universe. And that distinction is not hard to make. - 'Superman'",
@@ -79,6 +76,16 @@ end
 20.times do
   Reservation.create!(user: User.all.sample, superpower: Superpower.all.sample)
   4.times do
+
+  User.create!(
+    first_name: Faker::Superhero.name,
+    email: Faker::Internet.email,
+    password:"123456")
+end
+
+20.times do
+  Reservation.create!(user:User.all.sample, superpower:Superpower.all.sample)
+  2.times do
     Review.create!(
       reservation: Reservation.all.sample,
       content: user_review.sample,

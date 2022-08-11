@@ -87,16 +87,13 @@
         </div>
 
         <div class="col-12 col-lg-6">
-          <div class="review-space-text d-flex">
-            <a href="#"><img src=" <%= @superpower.avatar %>" alt="" width="50" height="50" class="rounded-circle"></a>
-            <h4> <%= @superpower.name %></h4>
+          <div class="d-flex">
+           <div style="width: 100%; height: 600px;"
+              data-controller="mapbox"
+              data-mapbox-markers-value="<%= @markers.to_json %>"
+              data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+            </div>
           </div>
-          <% @reviews.each do |review| %>
-            <p class="star">⭐ <%= review.rating %></p>
-            <p class="rev-content"><%= review.content %></p>
-          <% end  %>
-        </div>
-
 
       </div>
     </div>
