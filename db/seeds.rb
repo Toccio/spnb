@@ -45,12 +45,7 @@ avatar_user = [
   "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1633155164/pqz1e2kggqkmw8s2gddp.jpg",
   "https://ca.slack-edge.com/T02NE0241-U016TFXV4S2-3098e8dd7db1-512"
 ]
-  20.times do
-  User.create!(
-    first_name: user_first_name.sample,
-    email: Faker::Internet.email,
-    password:"123456")
-end
+
 
 20.times do
   Superpower.create!(
@@ -73,15 +68,12 @@ end
     )
 end
 
-20.times do
-  Reservation.create!(user: User.all.sample, superpower: Superpower.all.sample)
   4.times do
-
   User.create!(
     first_name: Faker::Superhero.name,
     email: Faker::Internet.email,
     password:"123456")
-end
+  end
 
 20.times do
   Reservation.create!(user:User.all.sample, superpower:Superpower.all.sample)

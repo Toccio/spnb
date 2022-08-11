@@ -18,7 +18,7 @@ class ReservationsController < ApplicationController
     @reservation.superpower = @superpower
     @reservation.user = current_user
     if @reservation.save
-      redirect_to new_superpower_reservation_path(@reservation)
+      redirect_to reservations_path
     else
       render :new
     end
@@ -33,23 +33,24 @@ class ReservationsController < ApplicationController
   def edit
   end
 
-  def update
-    @reservation = Reservation.find_by_id(params[:id])
-    @reservation.update(state: "approved")
-    if @reservation.state == "approved"
-      flash[:success] = "Reservation approved"
-      redirect_to reservations_path
-    else
-      flash[:error] = "Reservation not approved"
-      redirect_to reservations_path
-    end
-  end
+  # def update
+  #   @reservation = Reservation.find_by_id(params[:id])
+  #   @reservation.update(state: "approved")
+  #   if @reservation.state == "approved"
+  #     flash[:success] = "Reservation approved"
+  #     redirect_to reservations_path
+  #   else
+  #     flash[:error] = "Reservation not approved"
+  #     redirect_to reservations_path
+  #   end
+  # end
 
-# def update
-#   @reservation.update(reservation_params)
-#   redirect_to reservation_path(@reservation)
-#     # - CHECK THE PATH
-# end
+def update
+  @reservation.update(reservation_params)
+  redirect_to reservation_path(@reservation)
+  authorize @reservation
+    # - CHECK THE PATH
+end
 
   def destroy
     @reservation.destroy

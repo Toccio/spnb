@@ -22,6 +22,7 @@ class SuperpowersController < ApplicationController
   def show
     @reservation = Reservation.new
     @reviews = @superpower.reviews
+    @superpowers = policy_scope(Superpower)
     @markers = @superpowers.map do |superpower|
       {
         lat: superpower.latitude,
