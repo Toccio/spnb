@@ -1,0 +1,68 @@
+.gray-container {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  background-color: rgb(201, 206, 255);
+  padding:  150px 150px 150px 150px;
+}
+.big-dot{
+  height: 500px;
+  width: 500px;
+  background-color: rgb(223, 227, 254);
+  border-radius: 50%;
+  display: inline-block;
+  margin: -400px;
+}
+
+.small-dot{
+  height: 200px;
+  width: 200px;
+  background-color: rgb(223, 227, 254);
+  border-radius: 50%;
+  display: inline-block;
+  // margin-top: 300px;
+
+}
+
+.big-dot-right{
+  height: 300px;
+  width: 300px;
+  background-color: rgb(223, 227, 254);
+  border-radius: 50%;
+  display: inline-block;
+  margin-top: -300px;
+  margin-left: 845px;
+  margin-bottom: -683px;
+
+}
+
+.splitted-form {
+  background-color: rgb(255, 255, 255);
+}
+
+.dark-gray-form{
+  padding:  50px 50px 50px 50px;
+  background-color: rgb(110, 110, 206);
+}
+
+.form {
+  padding: 20px;
+}
+
+.test-center {
+color: white;
+  p{
+    margin: 0;
+  }
+}
+
+.white-form {
+  background-color: white;
+  padding:  50px 50px 50px 50px;
+}
+
+.gray-button{
+  background-color: rgb(132, 132, 190);
+  color: white;
+  font-weight: bold;
+  border: none;
+}

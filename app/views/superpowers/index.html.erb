@@ -6,6 +6,8 @@
   <table class="table">
     <thead>
       <tr>
+
+
         <th scope="col">User</th>
         <th scope="col">Superpower</th>
         <th scope="col">Photo</th>
@@ -20,6 +22,7 @@
     <tbody>
       <% @superpowers.each do |superpower| %>
         <tr>
+         <td> <img src=" <%= superpower.avatar %>" alt="" width="50" height="50" class="rounded-circle"></td>
           <td> <%= link_to superpower.name, superpower, class: "text-decoration-none" %></td>
           <td> <%= superpower.superpower_name %></td>
           <td> <%= superpower.description %></td>
