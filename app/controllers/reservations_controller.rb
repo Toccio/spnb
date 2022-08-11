@@ -34,7 +34,7 @@ class ReservationsController < ApplicationController
 def show
   authorize @reservation
 end
-
+# COME BACK LATER TO DELETE THIS
 def edit
 end
 
