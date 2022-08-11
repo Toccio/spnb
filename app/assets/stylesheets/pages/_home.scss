@@ -1,1 +1,183 @@
 // Specific CSS for your home-page
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display:grid;
+  line-height: 1.6;
+  background-image: linear-gradient(
+    to bottom,rgba(245, 245, 245, 1),rgba(248, 245, 241, 0.2)),
+    url(https://images.unsplash.com/photo-1536514498073-50e69d39c6cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80);
+  background-size: cover;
+}
+
+.section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+}
+
+.card {
+  color: white;
+  min-height: 56vh;
+  place-items: center;
+  width: 320px;
+  padding: 10rem, 0, 0;
+  max-width: 35ch;
+  position:relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 500ms ease;
+  box-shadow: 2px 4px 8px #d61c4e;
+}
+#A {
+  background-image: url(https://images.unsplash.com/photo-1592530392525-9d8469678dac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80);
+  background-size: cover;
+}
+
+#B{
+  background-image: url(https://images.unsplash.com/photo-1519834785169-98be25ec3f84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80);
+  background-size: cover;
+}
+
+#C{
+  background-image: url(https://images.unsplash.com/photo-1553976468-dcd9082bcd28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1065&q=80);
+  background-size: cover;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 8px 10px 14px #d61c4e;
+}
+
+.card-content {
+  --padding: 1.5rem;
+  padding: var(--padding);
+  background: linear-gradient(
+   to bottom, rgba(0,0,0,0.05),rgba(0,0,0,0.8)
+  );
+  position:absolute;
+  bottom:0;
+  left: 0;
+  transform: translateY(65%);
+  transition: transform 500ms ease;
+}
+
+.card:hover .card-content {
+  transform:translateY(0);
+}
+
+.card-body {
+  color: white;
+  opacity: 0.85;
+}
+.card-title {
+  position: relative;
+  bottom: -8px;
+}
+.card-title::after {
+  content:'';
+  position: absolute;
+  height: 4px;
+  left: calc(var(--padding)* -1);
+  bottom: 0;
+  width: calc(100% +var(--padding));
+  background: orange;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 500ms ease;
+}
+
+.card:hover .card-title::after {
+transform: scaleX(1);
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  color: #d61c4e;
+  background-color: orange;
+  padding: 0.5em 1.25em;
+  border-radius: 8px;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #d61c4e;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 300ms ease-in-out;
+  border-radius: 8px;
+}
+
+.button {
+  z-index: 1;
+}
+
+.button:hover::before,
+.button:focus::before {
+  transform: scaleX(1);
+}
+
+.button:hover,
+.button:focus {
+  color:orange ;
+}
+
+.spnb {
+  font-size: 4em;
+  font-family: "Roboto";
+  font-weight: 400;
+  color:#fff;
+  width: 100%;
+  letter-spacing: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.spnb span {
+  transition: 0.3s ease-in;
+}
+.spnb span:nth-child(1) {
+  margin-left: 40px;
+}
+.spnb:hover span:nth-child(1) {
+  margin-right:10px;
+}
+
+.spnb:hover span:nth-child(1)::after {
+ content: "uper";
+}
+
+.spnb:hover span:nth-child(2) {
+  margin-left: 40px;
+}
+
+.spnb:hover span:nth-child(2)::after {
+  content: "owers";
+ }
+ .spnb:hover span:nth-child(3) {
+  margin-left: 40px;
+}
+
+.spnb:hover span:nth-child(3) {
+  margin-right: 40px;
+}
+.spnb:hover span {
+  color:orange;
+  text-shadow: 0 0 10px orange,
+  0 0 20px orange,
+  0 0 40px orange,
+  0 0 60px orange,
+}

@@ -1,22 +1,37 @@
 <% if user_signed_in? %>
-<%="Welcome, #{current_user.email}" %>
 <% end %>
 
 <div class="banner">
-  <h1><strong>Wanna be SUPERPOWERED?</strong></h1>
-</div>
+  <br>
+    <h1 class="spnb">
+    Things to do with <span><strong>S</strong></span><span><strong>P</strong></span><span><strong>N</strong></span><span><strong>B</strong></span>
+    </h1>
+  <br>
+  <br>
 
-<div class="recommendation">
-  <h3 id="today">Today's pick for you: Spiderman's powers!</h2>
-  <div class="card-sp">
-    <img src="https://th.bing.com/th/id/R.4d0b7877087c063a2266518d973212f0?rik=h6cO3HjTdJ2Dcg&pid=ImgRaw&r=0" alt="" class="card-image">
-    <div class="info">
-    <div>
-      <h4><strong>Spiderman's Wallcrawling</strong></h4>
-      <p>Climb every wall like a Spiderman</p>
+  <div class="section">
+    <div class="card" id="A">
+    <div class="card-content">
+      <h2 class="card-title">You have <strong>superpowers</strong>?</h2>
+      <p class="card-body">You can easily find people interested in your power by publishing it!</p>
+      <%= link_to "Publish power", new_superpower_path, class: "button"  %>
     </div>
-    <h3>$100/hr</h3>
-    <img src="https://th.bing.com/th/id/R.ae5e2dcc6cfd1d453709a2c46657b770?rik=BZhjGl1YteiY%2bQ&pid=ImgRaw&r=0" alt="" class="avatar">
   </div>
- </div>
+
+  <div class="card" id="B">
+    <div class="card-content">
+      <h2 class="card-title">Wanna <strong>boost</strong> your power?</h2>
+      <p class="card-body">You can easily find the power you dream of here!</p>
+      <%= link_to "Check it out", superpowers_path, class: "button"  %>
+    </div>
+  </div>
+
+  <div class="card" id="C">
+    <div class="card-content">
+      <h2 class="card-title">Join <strong>millions</strong> of us</h2>
+      <p class="card-body">You are not alone to make the world better, join us now!</p>
+      <%= link_to "Join", "#", class: "button"  %>
+    </div>
+  </div>
+
 </div>

@@ -1,49 +1,82 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: #058ED9;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-}
-
-.navbar-lewagon .navbar-collapse {
+.container-fluid {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 30px 10%;
   flex-grow: 0;
+  height: 80px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 60px;
-  background-color: black;
-  border-radius: 50px;
+.logo img {
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
 }
 
-.searchbar {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  width: 400px;
-  li {
-    color: #F4EBD9;
-  }
+.link_items {
+  list-style: none;
+}
+
+.nav-item {
+  display: inline-block;
+  padding: 0px, 20px;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  font-weight: bolder;
+  background-color: orange;
+  border-radius: 8px;
+  padding: 0.5em 1.25em;
+  border: none;
+  color: #d61c4e;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #d61c4e;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 300ms ease-in-out;
+  border-radius: 8px;
+}
+
+.btn {
+  z-index: 1;
+}
+
+.btn:hover::before,
+.btn:focus::before {
+  transform: scaleX(1);
+}
+
+.btn:hover,
+.btn:focus {
+  color:orange ;
 }
 
 #query {
-  width: 400px;
+  width: 250px;
+  height: 40px;
   border-style: solid;
   border-radius: 50px;
   text-align: center;
   padding: 3px;
+  border-color: orange;
+  opacity: 0.8;
+  color: #d61c4e;
 }
 
-.btn-ghost {
-
-  padding: 4px 18px;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
-}
-
-.btn-ghost:hover {
-  opacity: 1;
-  color: #f4ebd9;
-  border: 1px solid #F4EBD9;
-}
-
-.nav-item {
-  padding: 5px;
+#query:hover,
+#query:focus {
+  border-color: #d61c4e;
+  box-shadow: 2px 4px 6px #d61c4e;
 }
