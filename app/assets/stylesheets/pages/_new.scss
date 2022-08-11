@@ -2,8 +2,18 @@
   margin-top: 80px;
   margin-bottom: 80px;
   background-color: rgb(201, 206, 255);
-  padding:  150px 150px 150px 150px;
+  padding: 40px;
+  border-radius: 30px;
 }
+
+.small-gray {
+  padding: 50px 30px 50px 30px;
+  background-color: rgb(146, 154, 228);
+  border-radius: 30px;
+  // margin-left: 80px;
+  // margin-right: 10px;
+}
+
 .big-dot{
   height: 500px;
   width: 500px;
@@ -19,8 +29,6 @@
   background-color: rgb(223, 227, 254);
   border-radius: 50%;
   display: inline-block;
-  // margin-top: 300px;
-
 }
 
 .big-dot-right{

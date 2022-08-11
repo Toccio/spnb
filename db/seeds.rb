@@ -6,12 +6,9 @@ Superpower.destroy_all
 User.destroy_all
 puts 'Database created'
 
-<<<<<<< HEAD
 luca = User.create!(first_name:'luca',email:'lucafigo@gmail.com', password:"123456")
 ana= User.create!(first_name:'anas',email:'anasfigo@gmail.com', password:"123456")
 
-=======
->>>>>>> master
 superhero_quotes = [
   "Only the weak succumb to brutality. - Superman",
   "There is a right and a wrong in this universe. And that distinction is not hard to make. - 'Superman'",
@@ -32,26 +29,36 @@ superhero_quotes = [
 user_review = [
   "Useless power. The spider-web are not sticky enough and you cannot climb on the glass of modern buildings, the stickiness is not strong enough. Plus you are not allowed to slice people with this power, the owner is not insured.",
   "Great costume. All as described, I really liked the very tight costume.",
+  "All perfect! The superpower is fantastic plus owner is a really friendly person. He take all responsibility for the damaged buildings. The only restriction is to not kill the bad people!",
+  "This super power sucks. Vlad's super power is much more powerful and effective and has no bugs!",
+  "Super power is great. And the owner was really nice person. The only thing I didn't get is way when the owner was explaining me how to use is superpower was always speaking about bananas.",
   "I had a great time using this super power. All the girls were chasing me! the only down side is that the costume provided by the owner was to small for me.",
   "I don't understand all the hype for this super power. Is nothing special, there are to many restrictions. The only good thing was that I had the chance to fight against Thanos, like iron-man, SPOILER ALERT but without dying."
 ]
 
 superpower_description = [
-  "strength and agility stand far above those of the average human, allowing you to lift nearly ten tons and to leap and move at incredible speeds with high accuracy.",
+  "Strength and agility stand far above those of the average human, allowing you to lift nearly ten tons and to leap and move at incredible speeds with high accuracy.",
   "You can flight around and have superhuman strength, x-ray vision, heat vision, cold breath, super-speed, enhanced hearing, and nigh-invulnerability",
   "Superhuman strength and reflexes, enhanced senses and tracking abilities, and a special healing power that also slows your aging"
 ]
-20.times do
+
+user_first_name = ["Vladislav Postolachi", "Malin Schadel", "Bruno Tallarico", "Camila Modena", "André R. Ferrer", "Camilo Zamora", "Jess Silva Carvalho", "Alizeh", "Luca Severo"]
+
+avatar_user = [
+  "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1633155164/pqz1e2kggqkmw8s2gddp.jpg",
+  "https://ca.slack-edge.com/T02NE0241-U016TFXV4S2-3098e8dd7db1-512"
+]
+  20.times do
   User.create!(
-    first_name: Faker::Superhero.name,
+    first_name: user_first_name.sample,
     email: Faker::Internet.email,
     password:"123456")
 end
 
-50.times do
+20.times do
   Superpower.create!(
       user_id: User.first.id,
-      name: Faker::Superhero.name,
+      name: user_first_name.sample,
       price: rand(25..1000),
       description: superpower_description.sample,
       address: Faker::Address.full_address,
@@ -61,18 +68,19 @@ end
       rating: rand(1..5),
       number: rand(1..1000),
       fnumber: rand(1..500),
-      avatar: Faker::Avatar.image,
+      avatar: avatar_user.sample,
       # CHANGE TO HOW_TO_USE?
       more_info: Faker::Lorem.sentence(word_count: 13, supplemental: true, random_words_to_add: 4),
       # CHANGE NAME IN REVIEW?
+      quotes: superhero_quotes.sample
     )
 end
 
 20.times do
-  Reservation.create!(user:User.all.sample, superpower:Superpower.all.sample)
-  2.times do
+  Reservation.create!(user: User.all.sample, superpower: Superpower.all.sample)
+  4.times do
     Review.create!(
-      reservation:Reservation.all.sample,
+      reservation: Reservation.all.sample,
       content: user_review.sample,
       rating: rand(1..5)
     )
