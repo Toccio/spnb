@@ -22,7 +22,7 @@ class ReservationsController < ApplicationController
 
     # raise
     if @reservation.save
-      redirect_to superpower_reservation_path(@reservation)
+      redirect_to reservation_path(@reservation)
     else
       render :new
     end

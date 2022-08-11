@@ -6,6 +6,6 @@ Rails.application.routes.draw do
       resources :reviews, only: [:create, :index, :show]
     end
   end
-  resources :reservations, only: [ :destroy, :edit, :update, :index, :show]
+  resources :reservations, only: [ :destroy,:index, :show]
 end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
