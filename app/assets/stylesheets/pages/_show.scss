@@ -1,7 +1,8 @@
-body {
+.show-container {
   background-color: rgb(255, 255, 255);
   text-align: justify;
   margin: 0 auto;
+  padding: 0px 50px 50px 50px;
 }
 
 .spider-info-text {
@@ -10,4 +11,8 @@ body {
 
 .more-text {
   display: none;
+}
+
+.avatar {
+  border-color: solid blue;
 }

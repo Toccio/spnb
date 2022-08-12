@@ -1,17 +1,26 @@
 class SuperpowersController < ApplicationController
   before_action :set_superpower, only: [:show, :edit, :update, :destroy]
-
   # GET / superpowers
   def index
+    @superpowers = policy_scope(Superpower)
+    @markers = @superpowers.map do |superpower|
+      {
+        lat: superpower.latitude,
+        lng: superpower.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { superpower: superpower })
+      }
+    end
     if params[:query].present?
-      @superpowers = policy_scope(Superpower).select { |superpower| superpower.name.start_with?(params[:query].downcase) }
+      @superpowers = Superpower.search_by_name_and_superpower_name(params[:query])
     else
-      @superpowers = policy_scope(Superpower)
+      @superpowers = Superpower.all
     end
   end
 
   # GET / superpower / id
   def show
+    @reservation = Reservation.new
+    @reviews = @superpower.reviews
     # @superpower = Superpower.find(params[:id])
     # authorize @superpower
     # achieved with before_action

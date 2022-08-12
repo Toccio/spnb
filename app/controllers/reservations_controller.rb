@@ -22,7 +22,7 @@ class ReservationsController < ApplicationController
 
     # raise
     if @reservation.save
-      redirect_to superpower_reservation_path(@reservation)
+      redirect_to reservation_path(@reservation)
     else
       render :new
     end
@@ -34,7 +34,7 @@ class ReservationsController < ApplicationController
 def show
   authorize @reservation
 end
-
+# COME BACK LATER TO DELETE THIS
 def edit
 end
 
