@@ -19,6 +19,7 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
     if @reservation.save
       redirect_to reservations_path
+      redirect_to reservation_path(@reservation)
     else
       render :new
     end

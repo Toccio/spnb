@@ -39,7 +39,6 @@ superpower_description = [
   "Superhuman strength and reflexes, enhanced senses and tracking abilities, and a special healing power that also slows your aging"
 ]
 
-
 # Vladislav_Postolachi = User.create!(
 #   first_name: "Vladislav Postolachi",
 #   email: Faker::Internet.email,
@@ -58,7 +57,7 @@ superpower_description = [
   )
 end
 
-10.times do
+20.times do
   Superpower.create!(
       user: User.first,
       name: Faker::Superhero.name,

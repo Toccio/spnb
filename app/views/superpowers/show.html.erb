@@ -6,7 +6,11 @@
         </a>
         <h4 class="no-margin-name"> <strong><%= @superpower.name %></strong></h4>
     </div>
+<<<<<<< HEAD
     <p class="no-margin-name">⭐ <%= @superpower.rating %> ♦️ <a href="#review">  <%= @superpower.number %> reviews  </a></p>
+=======
+    <p class="no-margin-name">⭐ <%= @superpower.rating %> ♦️ <a href="#">  <%= @superpower.number %> reviews  </a></p>
+>>>>>>> master
   </div>
 
 
@@ -74,7 +78,11 @@
       <div class="row">
 
         <div class="col-12 col-lg-6">
+<<<<<<< HEAD
         <h3>Where I am now 🌍</h3>
+=======
+        <h3 calss="where-i-am">Where I am now 🌍</h3>
+>>>>>>> master
           <div class="d-flex">
            <div style="width: 100%; height: 600px;"
               data-controller="mapbox"
@@ -87,15 +95,23 @@
 
         <div class="col-12 col-lg-6">
           <div class="reviews-rating d-flex review pt-3">
+<<<<<<< HEAD
             <h5><strong id="review">⭐ <%= @superpower.rating %> - <%= @superpower.number %> reviews</strong></h5>
+=======
+            <h5><strong>⭐ <%= @superpower.rating %> - <%= @superpower.number %> reviews</strong></h5>
+>>>>>>> master
             <a href="#"> <%= @superpower.fnumber %> User pictures</a>
           </div>
           <div class="review-space-text d-flex">
             <a href="#"><img src=" <%= @superpower.avatar %>" alt="" width="50" height="50" class="rounded-circle"></a>
             <h4> <%= @superpower.name %></h4>
           </div>
+<<<<<<< HEAD
 
           <% @reservation.reviews.each do |review| %>
+=======
+          <% @reviews.each do |review| %>
+>>>>>>> master
             <p class="star">⭐ <%= review.rating %></p>
             <p class="rev-content"><%= review.content %></p>
           <% end  %>
