@@ -9,6 +9,10 @@
     <p class="no-margin-name">⭐ <%= @superpower.rating %> ♦️ <a href="#review">  <%= @superpower.number %> reviews  </a></p>
   </div>
 
+<% @superpower.photos.each do |photo| %>
+<img src="  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>" alt="">
+<img src="  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>" alt="">
+<% end %>
 
 
     <%# Caroserl %>
