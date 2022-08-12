@@ -1,6 +1,10 @@
 <div class="container">
-<h1> <%= @reservation.superpower.name %></h1>
+  <h1> <%= @reservation.superpower.name %></h1>
+  <img src="<%= @reservation.superpower.avatar %>" alt="">
   <p> <%= @reservation.superpower.description %> </p>
   <p> <%= @reservation.superpower.address %></p>
   <p>Price - <%= @reservation.superpower.price %> night</p>
+  <p><%= @reservation.check_in %></p>
+    <p><%= @reservation.check_out %></p>
+
 </div>

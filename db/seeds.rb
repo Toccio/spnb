@@ -75,16 +75,12 @@ end
       more_info: Faker::Lorem.sentence(word_count: 13, supplemental: true, random_words_to_add: 4),
       # CHANGE NAME IN REVIEW?
     )
-end
+  end
 
-20.times do
-  Reservation.create!(user:User.all.sample, superpower:Superpower.all.sample)
   2.times do
     Review.create!(
-      reservation:Reservation.all.sample,
       content: user_review.sample,
       rating: rand(1..5)
     )
   end
-end
 puts "Done 👌"
