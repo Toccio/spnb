@@ -19,11 +19,18 @@ class SuperpowersController < ApplicationController
 
   # GET / superpower / id
   def show
+    @user = User.new
     @reservation = Reservation.new
     @reviews = @superpower.reviews
-    # @superpower = Superpower.find(params[:id])
-    # authorize @superpower
-    # achieved with before_action
+    @superpowers = policy_scope(Superpower)
+    @markers = @superpowers.map do |superpower|
+      {
+        lat: superpower.latitude,
+        lng: superpower.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { superpower: superpower }),
+        image_url: helpers.asset_url("spiderman.jpeg")
+      }
+    end
   end
 
   # GET / superpower / new

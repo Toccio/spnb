@@ -27,7 +27,10 @@ user_review = [
   "Useless power. The spider-web are not sticky enough and you cannot climb on the glass of modern buildings, the stickiness is not strong enough. Plus you are not allowed to slice people with this power, the owner is not insured.",
   "Great costume. All as described, I really liked the very tight costume.",
   "I had a great time using this super power. All the girls were chasing me! the only down side is that the costume provided by the owner was to small for me.",
-  "I don't understand all the hype for this super power. Is nothing special, there are to many restrictions. The only good thing was that I had the chance to fight against Thanos, like iron-man, SPOILER ALERT but without dying."
+  "I don't understand all the hype for this super power. Is nothing special, there are to many restrictions. The only good thing was that I had the chance to fight against Thanos, like iron-man, SPOILER ALERT but without dying.",
+  "All perfect! The superpower is fantastic plus owner is a really friendly person. He take all responsibility for the damaged buildings. The only restriction is to not kill the bad people!",
+  "This super power sucks. Vlad's super power is much more powerful and effective and has no bugs!",
+  "Super power is great. And the owner was really nice person. The only thing I didn't get is way when the owner was explaining me how to use is superpower was always speaking about bananas.",
 ]
 
 superpower_description = [
@@ -36,14 +39,25 @@ superpower_description = [
   "Superhuman strength and reflexes, enhanced senses and tracking abilities, and a special healing power that also slows your aging"
 ]
 
+# Vladislav_Postolachi = User.create!(
+#   first_name: "Vladislav Postolachi",
+#   email: Faker::Internet.email,
+#   avatar:"https://ca.slack-edge.com/T02NE0241-UMYUFTJMC-c72b08a40791-512"
+# )
+
+#   Andreé = User.create!(
+#     first_name: "Andreé",
+#     email: Faker::Internet.email,)
+
 20.times do
   User.create!(
     first_name: Faker::Superhero.name,
     email: Faker::Internet.email,
-    password:"123456")
+    password:"123456",
+  )
 end
 
-50.times do
+20.times do
   Superpower.create!(
       user: User.first,
       name: Faker::Superhero.name,
