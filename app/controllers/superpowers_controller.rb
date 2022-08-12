@@ -20,6 +20,7 @@ class SuperpowersController < ApplicationController
 
   # GET / superpower / id
   def show
+    @user = User.new
     @reservation = Reservation.new
     @reviews = @superpower.reviews
     @superpowers = policy_scope(Superpower)
