@@ -73,16 +73,6 @@ ActiveRecord::Schema.define(version: 2022_08_09_092051) do
     t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-<<<<<<< HEAD
-    t.float "latitude"
-    t.float "longitude"
-    t.string "power"
-    t.string "city"
-    t.integer "rating"
-    t.string "first_name"
-    t.string "superpower_name"
-    t.float "ratings"
-=======
     # t.string "power"
     # t.string "city"
     t.integer "rating"
@@ -92,7 +82,6 @@ ActiveRecord::Schema.define(version: 2022_08_09_092051) do
     t.string "superpower_name"
     t.float "ratings"
     # t.integer "Number"
->>>>>>> baf31d799de2fa48fdee5246e1df7317cb6dd94b
     t.integer "number"
     t.integer "fnumber"
     # t.string "title"
