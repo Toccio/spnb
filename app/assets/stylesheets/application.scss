@@ -26,6 +26,8 @@
 body {
   position: relative;
   background-color: rgb(255, 255, 255);
+  background: url("background.jpg") no-repeat center fixed;
+  background-size: cover;
 }
 
 #today {
