@@ -1,6 +1,7 @@
 require'faker'
 
 puts 'Creating database'
+Review.destroy_all
 Reservation.destroy_all
 Superpower.destroy_all
 User.destroy_all
@@ -40,7 +41,7 @@ superpower_description = [
 ]
 
 le_wagon = [
-  "https://ca.slack-edge.com/T02NE0241-UMYUFTJMC-c72b08a40791-512",
+  # "https://ca.slack-edge.com/T02NE0241-UMYUFTJMC-c72b08a40791-512",
   "https://ca.slack-edge.com/T02NE0241-U01B2KZRDV1-d6725a37feb5-512",
   "https://ca.slack-edge.com/T02NE0241-ULHT7RUTU-25f6e4344376-512",
   "https://ca.slack-edge.com/T02NE0241-U01C4FMDDC4-6b4e755e103d-512",
@@ -52,21 +53,13 @@ le_wagon = [
   "https://ca.slack-edge.com/T02NE0241-U03BPNQAD99-6e7a29111776-512",
   "https://ca.slack-edge.com/T02NE0241-U03B7T283K9-6856c19a11f3-512"
 ]
-# Vladislav_Postolachi = User.create!(
-#   first_name: "Vladislav Postolachi",
-#   email: Faker::Internet.email,
-#   avatar:"https://ca.slack-edge.com/T02NE0241-UMYUFTJMC-c72b08a40791-512"
-# )
 
-#   Andreé = User.create!(
-#     first_name: "Andreé",
-#     email: Faker::Internet.email,)
-
-20.times do
+1.times do
   User.create!(
     first_name: Faker::Superhero.name,
     email: Faker::Internet.email,
     password:"123456",
+    avatar: Faker::Avatar.image
   )
 end
 
@@ -87,8 +80,10 @@ end
       # CHANGE TO HOW_TO_USE?
       more_info: Faker::Lorem.sentence(word_count: 13, supplemental: true, random_words_to_add: 4),
       # CHANGE NAME IN REVIEW?
+      quotes: superhero_quotes.sample
     )
   end
+
   20.times do
     Reservation.create!(user:User.all.sample, superpower:Superpower.all.sample)
     2.times do

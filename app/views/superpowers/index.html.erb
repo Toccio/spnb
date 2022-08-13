@@ -7,17 +7,21 @@
       <div class="maincontainer">
         <div class="top_card">
           <div class="thefront" style="background-image: <%= superpower.avatar %> ">
-            <h3><%= superpower.superpower_name %></h3>
+            <h3><strong><%= superpower.superpower_name %></strong></h3>
             <p><%= superpower.description %></p>
           </div>
           <div class="theback">
-            <p>This is</p><br>
-            <p><strong>User</strong>'s</p><br>
-            <p>Superpower</p>
-            <p>Rating: <%= superpower.rating %></p>
-            <button><%= link_to "Check it now!", superpowers_path, class: "text-decoration-none"  %></button>
+            <div class="bheader">
+              <p>This superpower belongs to</p><br>
+              <p>Username</p><br>
+              <p>Rating: <%= superpower.rating %></p>
+            </div>
+            <div class="bfooter">
+              <%= link_to "Check it now!", superpower_path(superpower.id), class: "checkbutton"  %>
+            </div>
           </div>
         </div>
+
       </div>
     <% end %>
   </div>
@@ -36,23 +40,59 @@
         </h1>
     </div>
   </div>
-    <div class="cards">
-    <% @superpowerss.each do |superpower| %>
+    <div class="cards-1">
+     <% @superpowers.each do |superpower| %>
       <div class="maincontainer">
         <div class="top_card">
           <div class="thefront" style="background-image: <%= superpower.avatar %> ">
-            <h3><%= superpower.superpower_name %></h3>
+            <h3><strong><%= superpower.superpower_name %></strong></h3>
             <p><%= superpower.description %></p>
           </div>
           <div class="theback">
-            <p>This is</p><br>
-            <p><strong>User</strong>'s</p><br>
-            <p>Superpower</p>
-            <p>Rating: <%= superpower.rating %></p>
-            <button><%= link_to "Check it now!", superpowers_path, class: "text-decoration-none"  %></button>
+            <div class="bheader">
+              <p>This superpower belongs to</p><br>
+              <p>Username</p><br>
+              <p>Rating: <%= superpower.rating %></p>
+            </div>
+            <div class="bfooter">
+              <%= link_to "Check it now!", superpower_path(superpower.id), class: "checkbutton"  %>
+            </div>
           </div>
         </div>
       </div>
-    <% end %>
+     <% end %>
   </div>
+   <%# <div class="swiper-button-next"></div>
+   <div class="swiper-button-prev"></div>
+   <div class="swiper-scrollbar"></div>
+   <div class="swiper-pagination"></div> %>
 </div>
+
+<%# <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        centeredSlides: false,
+        slidesPerGroupSkip: 1,
+        grabCursor: true,
+        keyboard: {
+          enabled: true,
+        },
+        breakpoints: {
+          769: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+          },
+        },
+        scrollbar: {
+          el: ".swiper-scrollbar",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script> %>
