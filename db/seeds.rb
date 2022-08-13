@@ -89,7 +89,6 @@ end
       # CHANGE NAME IN REVIEW?
     )
   end
-
   20.times do
     Reservation.create!(user:User.all.sample, superpower:Superpower.all.sample)
     2.times do
@@ -100,4 +99,5 @@ end
       )
     end
   end
+
 puts "Done 👌"

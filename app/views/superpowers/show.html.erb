@@ -2,7 +2,11 @@
   <div class="avatar-name d-flex justify-content-between">
     <div class="d-flex ">
         <a href="#">
+        <% if @superpower.avatar %>
           <img src=" <%= @superpower.avatar %>" alt="" width="50" height="50" class="avatar-border rounded-circle">
+        <% else  %>
+          <img src="/assets/spider_sense.png" alt="" width="50" height="50" class="avatar-border rounded-circle">
+        <% end %>
         </a>
         <h4 class="no-margin-name"> <strong><%= @superpower.name %></strong></h4>
     </div>
