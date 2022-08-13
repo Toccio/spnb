@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+     <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -19,8 +24,8 @@
     <div class="profile">
       <%= image_tag "luca.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-          <%= link_to "My profile page", "#", class: "dropdown-item" %>
-          <%= link_to "My reservations", "#", class: "dropdown-item" %>
+          <%= link_to "My profile page", user_path(current_user), class: "dropdown-item" %>
+          <%= link_to "My reservations", reservations_path, class: "dropdown-item" %>
           <%= link_to "All superpowers", superpowers_path, class: "dropdown-item" %>
           <%= link_to "Create a superpower", new_superpower_path, class: "dropdown-item" %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, data: {turbo_method: :delete}, class: "dropdown-item" %>

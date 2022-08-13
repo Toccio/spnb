@@ -1,39 +1,23 @@
 <div class="row">
-      <div class="col-3">
-       <br>
-        <div class="center">
-          <%= image_tag "luca.png", class: "avatar-full" %>
-        </div>
-        <div class="description row-space-3">
-          <h2> My profile</h2>
-        </div>
-      </div>
-      <div class="col-6">
-      <br>
-        <div class="card-item">
-         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKDsN3-cJ-xKYSnR2yCjRhkEB020VwvdMTIg&usqp=CAU"/>
-         <div class="card-item-infos">
-           <h2>My bookings of superpowers</h2>
-           <%# list the bookings here %>
-           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-         </div>
-        </div>
-        <br>
-        <div class="card-item">
-          <img src="https://www.logolynx.com/images/logolynx/6a/6a3faebdd98b9c0d7439cd2ab7f4463c.jpeg"/>
-          <div class="card-item-infos">
-            <h2>My superpower reservations</h2>
-            <%# List the reservations of my superbowers %>
-            <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-          </div>
+  <div class="col-3">
+    <br>
+    <div class="center">
+      <%= image_tag "luca.png", class: "avatar-full" %>
+    </div>
+    <div class="description row-space-3">
+      <h2> My profile</h2>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="section">
+      <div class="card" id="A">
+        <div class="card-content">
+         <h2 class="card-title">You have <strong>reservations</strong>!</h2>
+         <br>
+         <%= link_to "See reservations", reservations_path, class: "button"  %>
         </div>
       </div>
     </div>
+  </div>
+</div>
+ß
