@@ -7,8 +7,75 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "mapbox-gl/dist/mapbox-gl.css";
+
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 @import "flatpickr/dist/flatpickr";
+@import "pages/show";
+@import "pages/form_superpower";
+@import "pages/new";
+
+.banner {
+  color:red;
+  padding: 24px;
+}
+
+body {
+  position: relative;
+  background-color: #eeeff0;
+}
+
+#today {
+  padding: 12px;
+  margin: 12px;
+}
+
+.card-sp {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-sp > img {
+  height:200px;
+  width:100px;
+  object-fit: cover;
+}
+
+.card-sp h4 {
+  margin:0;
+  font-size: 24px;
+}
+
+.card-sp p {
+  font-size: 12px;
+  opacity: .8;
+  margin:0;
+}
+
+.card-sp .info {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.info .avatar {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.profile {
+  position: fixed;
+  right: 48px;
+  top: 48px;
+  width: 40px;
+  box-shadow: 2px 4px 4px #d61c4e;
+  border-radius: 50%;
+}
