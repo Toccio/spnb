@@ -32,6 +32,7 @@ class SuperpowersController < ApplicationController
       }
     end
   end
+# HELLO
 
   # GET / superpower / new
   def new
