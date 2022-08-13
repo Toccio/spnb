@@ -25,7 +25,7 @@
 
 body {
   position: relative;
-  background-color: rgb(255, 255, 255);
+  background-color: #eeeff0;
 }
 
 #today {
@@ -69,4 +69,13 @@ body {
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.profile {
+  position: fixed;
+  right: 48px;
+  top: 48px;
+  width: 40px;
+  box-shadow: 2px 4px 4px #d61c4e;
+  border-radius: 50%;
 }

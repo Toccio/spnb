@@ -1,51 +1,58 @@
-<div class="text-center text-black">
-  <h1>Browse all superpowers</h1>
+<div class="top">
+  <div class="top_text text-center">
+    <h1><span>Top Rating</span> <span>Superpowers</span></h1>
+  </div>
+  <div class="cards">
+    <% @superpowerss.each do |superpower| %>
+      <div class="maincontainer">
+        <div class="top_card">
+          <div class="thefront" style="background-image: <%= superpower.avatar %> ">
+            <h3><%= superpower.superpower_name %></h3>
+            <p><%= superpower.description %></p>
+          </div>
+          <div class="theback">
+            <p>This is</p><br>
+            <p><strong>User</strong>'s</p><br>
+            <p>Superpower</p>
+            <p>Rating: <%= superpower.rating %></p>
+            <button><%= link_to "Check it now!", superpowers_path, class: "text-decoration-none"  %></button>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 
-<div class="container">
-  <table class="table">
-    <thead>
-      <tr>
-
-
-        <th scope="col">User</th>
-        <th scope="col">Superpower</th>
-        <th scope="col">Photo</th>
-        <th scope="col">Description</th>
-        <th scope="col">Address</th>
-        <th scope="col">Review</th>
-        <th scope="col">Price</th>
-      </tr>
-
-    </thead>
-
-    <tbody>
-      <% @superpowers.each do |superpower| %>
-        <tr>
-         <td> <img src=" <%= superpower.avatar %>" alt="" width="50" height="50" class="rounded-circle"></td>
-          <td> <%= link_to superpower.name, superpower, class: "text-decoration-none" %></td>
-          <td> <%= superpower.superpower_name %></td>
-          <td> <%= superpower.description %></td>
-          <td> <%= superpower.address %></td>
-          <td>⭐ <%= superpower.rating %></td>
-          <td> <%= superpower.price %>€</td>
-
-          <% if policy(superpower).edit? %>
-            <td><%= link_to 'Edit', edit_superpower_path(superpower), class: "text-decoration-none" %></td>
-          <% end %>
-          <% if policy(superpower).destroy? %>
-            <td><%= link_to 'Delete', superpower, method: :delete, data: { confirm: 'Are you sure?' }, class: "text-decoration-none"%></td>
-          <% end %>
-
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <br>
-<%= link_to 'New superpower', new_superpower_path, class: "text-decoration-none", class: "btn btn-flat" %>
+<div class="all">
+  <div class="all_text text-center">
+    <div class="words">
+        <h1 class="heading">
+          <span class="rotate">
+            <span>Explore</span><br>
+            <span>Reserve</span><br>
+            <span>Enjoy</span>
+          </span>
+          <span class="normal_heading">Superpowers</span>
+        </h1>
+    </div>
+  </div>
+    <div class="cards">
+    <% @superpowerss.each do |superpower| %>
+      <div class="maincontainer">
+        <div class="top_card">
+          <div class="thefront" style="background-image: <%= superpower.avatar %> ">
+            <h3><%= superpower.superpower_name %></h3>
+            <p><%= superpower.description %></p>
+          </div>
+          <div class="theback">
+            <p>This is</p><br>
+            <p><strong>User</strong>'s</p><br>
+            <p>Superpower</p>
+            <p>Rating: <%= superpower.rating %></p>
+            <button><%= link_to "Check it now!", superpowers_path, class: "text-decoration-none"  %></button>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
-<br>
-<div style="width: 100%; height: 600px;"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>

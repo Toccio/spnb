@@ -27,7 +27,10 @@ user_review = [
   "Useless power. The spider-web are not sticky enough and you cannot climb on the glass of modern buildings, the stickiness is not strong enough. Plus you are not allowed to slice people with this power, the owner is not insured.",
   "Great costume. All as described, I really liked the very tight costume.",
   "I had a great time using this super power. All the girls were chasing me! the only down side is that the costume provided by the owner was to small for me.",
-  "I don't understand all the hype for this super power. Is nothing special, there are to many restrictions. The only good thing was that I had the chance to fight against Thanos, like iron-man, SPOILER ALERT but without dying."
+  "I don't understand all the hype for this super power. Is nothing special, there are to many restrictions. The only good thing was that I had the chance to fight against Thanos, like iron-man, SPOILER ALERT but without dying.",
+  "All perfect! The superpower is fantastic plus owner is a really friendly person. He take all responsibility for the damaged buildings. The only restriction is to not kill the bad people!",
+  "This super power sucks. Vlad's super power is much more powerful and effective and has no bugs!",
+  "Super power is great. And the owner was really nice person. The only thing I didn't get is way when the owner was explaining me how to use is superpower was always speaking about bananas.",
 ]
 
 superpower_description = [
@@ -36,14 +39,38 @@ superpower_description = [
   "Superhuman strength and reflexes, enhanced senses and tracking abilities, and a special healing power that also slows your aging"
 ]
 
+le_wagon = [
+  "https://ca.slack-edge.com/T02NE0241-UMYUFTJMC-c72b08a40791-512",
+  "https://ca.slack-edge.com/T02NE0241-U01B2KZRDV1-d6725a37feb5-512",
+  "https://ca.slack-edge.com/T02NE0241-ULHT7RUTU-25f6e4344376-512",
+  "https://ca.slack-edge.com/T02NE0241-U01C4FMDDC4-6b4e755e103d-512",
+  "https://ca.slack-edge.com/T02NE0241-U01BHBMTCLV-f8421afb2922-512",
+  "https://ca.slack-edge.com/T02NE0241-U016TFXV4S2-3098e8dd7db1-512",
+  "https://ca.slack-edge.com/T02NE0241-U03BMB36KCM-fc5018869b0b-512",
+  "https://ca.slack-edge.com/T02NE0241-U03BNFYLNRH-68e9cf560d0f-512",
+  "https://ca.slack-edge.com/T02NE0241-U03C1R5RG2D-bf04ddda9367-512",
+  "https://ca.slack-edge.com/T02NE0241-U03BPNQAD99-6e7a29111776-512",
+  "https://ca.slack-edge.com/T02NE0241-U03B7T283K9-6856c19a11f3-512"
+]
+# Vladislav_Postolachi = User.create!(
+#   first_name: "Vladislav Postolachi",
+#   email: Faker::Internet.email,
+#   avatar:"https://ca.slack-edge.com/T02NE0241-UMYUFTJMC-c72b08a40791-512"
+# )
+
+#   Andreé = User.create!(
+#     first_name: "Andreé",
+#     email: Faker::Internet.email,)
+
 20.times do
   User.create!(
     first_name: Faker::Superhero.name,
     email: Faker::Internet.email,
-    password:"123456")
+    password:"123456",
+  )
 end
 
-50.times do
+20.times do
   Superpower.create!(
       user: User.first,
       name: Faker::Superhero.name,
@@ -56,21 +83,21 @@ end
       rating: rand(1..5),
       number: rand(1..1000),
       fnumber: rand(1..500),
-      avatar: Faker::Avatar.image,
+      avatar: le_wagon.sample,
       # CHANGE TO HOW_TO_USE?
       more_info: Faker::Lorem.sentence(word_count: 13, supplemental: true, random_words_to_add: 4),
       # CHANGE NAME IN REVIEW?
     )
-end
-
-20.times do
-  Reservation.create!(user:User.all.sample, superpower:Superpower.all.sample)
-  2.times do
-    Review.create!(
-      reservation:Reservation.all.sample,
-      content: user_review.sample,
-      rating: rand(1..5)
-    )
   end
-end
+  20.times do
+    Reservation.create!(user:User.all.sample, superpower:Superpower.all.sample)
+    2.times do
+      Review.create!(
+        reservation:Reservation.all.sample,
+        content: user_review.sample,
+        rating: rand(1..5)
+      )
+    end
+  end
+
 puts "Done 👌"

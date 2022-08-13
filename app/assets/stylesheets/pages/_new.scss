@@ -1,13 +1,23 @@
 .gray-container {
   margin-top: 80px;
   margin-bottom: 80px;
-  background-color: rgb(201, 206, 255);
-  padding:  150px 150px 150px 150px;
+  background-color:orange;
+  padding: 40px;
+  border-radius: 30px;
 }
+
+.small-gray {
+  padding: 50px 30px 50px 30px;
+  background-color: #d61c4e;
+  border-radius: 30px;
+  // margin-left: 80px;
+  // margin-right: 10px;
+}
+
 .big-dot{
   height: 500px;
   width: 500px;
-  background-color: rgb(223, 227, 254);
+  background-color: rgb(249, 192, 85);
   border-radius: 50%;
   display: inline-block;
   margin: -400px;
@@ -16,17 +26,15 @@
 .small-dot{
   height: 200px;
   width: 200px;
-  background-color: rgb(223, 227, 254);
+  background-color: rgb(249, 192, 85);
   border-radius: 50%;
   display: inline-block;
-  // margin-top: 300px;
-
 }
 
 .big-dot-right{
   height: 300px;
   width: 300px;
-  background-color: rgb(223, 227, 254);
+  background-color: rgb(242, 205, 136);
   border-radius: 50%;
   display: inline-block;
   margin-top: -300px;
@@ -61,8 +69,12 @@ color: white;
 }
 
 .gray-button{
-  background-color: rgb(132, 132, 190);
+  background-color: orange;
   color: white;
   font-weight: bold;
   border: none;
+}
+
+.gray-button:hover {
+  color: white;
 }
