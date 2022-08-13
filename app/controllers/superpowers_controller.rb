@@ -3,6 +3,7 @@ class SuperpowersController < ApplicationController
   # GET / superpowers
   def index
     @superpowers = policy_scope(Superpower)
+    @superpowerss = Superpower.where(rating: 5).sample(4)
     @markers = @superpowers.map do |superpower|
       {
         lat: superpower.latitude,
