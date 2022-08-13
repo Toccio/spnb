@@ -39,6 +39,19 @@ superpower_description = [
   "Superhuman strength and reflexes, enhanced senses and tracking abilities, and a special healing power that also slows your aging"
 ]
 
+le_wagon = [
+  "https://ca.slack-edge.com/T02NE0241-UMYUFTJMC-c72b08a40791-512",
+  "https://ca.slack-edge.com/T02NE0241-U01B2KZRDV1-d6725a37feb5-512",
+  "https://ca.slack-edge.com/T02NE0241-ULHT7RUTU-25f6e4344376-512",
+  "https://ca.slack-edge.com/T02NE0241-U01C4FMDDC4-6b4e755e103d-512",
+  "https://ca.slack-edge.com/T02NE0241-U01BHBMTCLV-f8421afb2922-512",
+  "https://ca.slack-edge.com/T02NE0241-U016TFXV4S2-3098e8dd7db1-512",
+  "https://ca.slack-edge.com/T02NE0241-U03BMB36KCM-fc5018869b0b-512",
+  "https://ca.slack-edge.com/T02NE0241-U03BNFYLNRH-68e9cf560d0f-512",
+  "https://ca.slack-edge.com/T02NE0241-U03C1R5RG2D-bf04ddda9367-512",
+  "https://ca.slack-edge.com/T02NE0241-U03BPNQAD99-6e7a29111776-512",
+  "https://ca.slack-edge.com/T02NE0241-U03B7T283K9-6856c19a11f3-512"
+]
 # Vladislav_Postolachi = User.create!(
 #   first_name: "Vladislav Postolachi",
 #   email: Faker::Internet.email,
@@ -70,17 +83,21 @@ end
       rating: rand(1..5),
       number: rand(1..1000),
       fnumber: rand(1..500),
-      avatar: Faker::Avatar.image,
+      avatar: le_wagon.sample,
       # CHANGE TO HOW_TO_USE?
       more_info: Faker::Lorem.sentence(word_count: 13, supplemental: true, random_words_to_add: 4),
       # CHANGE NAME IN REVIEW?
     )
   end
 
-  2.times do
-    Review.create!(
-      content: user_review.sample,
-      rating: rand(1..5)
-    )
+  20.times do
+    Reservation.create!(user:User.all.sample, superpower:Superpower.all.sample)
+    2.times do
+      Review.create!(
+        reservation:Reservation.all.sample,
+        content: user_review.sample,
+        rating: rand(1..5)
+      )
+    end
   end
 puts "Done 👌"
