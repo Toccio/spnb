@@ -6,6 +6,7 @@
           <img src=" <%= @superpower.avatar %>" alt="" width="50" height="50" class="avatar-border rounded-circle">
         <% else  %>
           <img src="/assets/spider_sense.png" alt="" width="50" height="50" class="avatar-border rounded-circle">
+          <img src="https://res.cloudinary.com/dawkcyufa/image/upload/v1660398016/Screenshot_2022-08-06_at_11.36.02_rn2hbl.png" alt="" width="50" height="50" class="avatar-border rounded-circle">
         <% end %>
         </a>
         <h4 class="no-margin-name"> <strong><%= @superpower.name %></strong></h4>
@@ -15,22 +16,18 @@
 
 
     <%# Caroserl %>
-<<<<<<< HEAD
+
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-<<<<<<< HEAD
   <div class="carosello carousel-inner">
     <div class="carousel-item active">
       <% @superpower.photos.each do |photo| %>
       <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
       <% end %>
     </div>
-
-=======
   <div class="carousel-inner">
     <% @superpower.photos.each do |photo| %>
       <div class="carousel-item active">
         <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-=======
     <% if !@superpower.photos.empty? %>
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -70,23 +67,13 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
->>>>>>> master
       </div>
     <% end %>
->>>>>>> master
   </div>
 </div>
 
 
 
-<<<<<<< HEAD
-=======
-
-
-
-
-
->>>>>>> master
     <div class="container border-bottom mb-3 pb-3">
       <div class="row">
         <div class="col-12 col-lg-6">
@@ -106,7 +93,7 @@
           <div class="more-info pt-3">
             <h5 class="more-how"><strong> How to use your superpower </strong></h5>
             <div class="rombo d-flex">
-            <img src="/assets/fulmine.png" alt="" class="fulmine">
+            <img src="https://res.cloudinary.com/dawkcyufa/image/upload/v1660397720/fulmine_yszq5j.png" alt="" class="fulmine">
               <p> <%= @superpower.more_info %></p></p>
             </div>
           </div>
@@ -123,15 +110,13 @@
 
     <div class="container">
       <div class="row">
-<<<<<<< HEAD
+
 <%# MAP %>
         <div class="col-12 col-lg-6">
         <h3>Where I am now 🌍</h3>
-=======
         <%# MAP %>
         <div class="col-12 col-lg-6">
           <h3>Where I am now 🌍</h3>
->>>>>>> master
           <div class="d-flex">
            <div style="width: 100%; height: 600px;"
               class="map-b-radius"
@@ -140,14 +125,11 @@
               data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
             </div>
           </div>
-<<<<<<< HEAD
 
       </div>
 <%# REVIEWS %>
-=======
         </div>
         <%# REVIEWS %>
->>>>>>> master
         <div class="col-12 col-lg-6">
           <div class="reviews-rating d-flex review pt-3">
             <h5><strong id="review">⭐ <%= @superpower.rating %> - <%= @superpower.number %> reviews</strong></h5>

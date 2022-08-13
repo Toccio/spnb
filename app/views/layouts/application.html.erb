@@ -22,7 +22,7 @@
     <p class="alert"><%= alert %></p>
     <%= yield %>
     <div class="profile">
-      <%= image_tag "luca.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <%= image_tag "https://res.cloudinary.com/dawkcyufa/image/upload/v1660398016/Screenshot_2022-08-06_at_11.36.02_rn2hbl.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <%= link_to "My profile page", user_path(current_user), class: "dropdown-item" %>
           <%= link_to "My reservations", reservations_path, class: "dropdown-item" %>
