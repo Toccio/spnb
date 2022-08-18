@@ -10,7 +10,7 @@
   </div>
   <div class="col-6">
     <div class="section">
-      <div class="card" id="A">
+      <div class="card" id="D">
         <div class="card-content">
          <h2 class="card-title">You have <strong>reservations</strong>!</h2>
          <br>
@@ -21,3 +21,19 @@
   </div>
 </div>
 ß
+
+const someFunction = (someArgument) => {
+  const bla = 'bla';
+  console.log(someArgument);
+  console.log(bla);
+  return someArgument + bla;
+};
+someFunction();
+
+const foo = someArgument => someArgument.json();
+
+
+fetch(url, {}).then(foo).then(jsObject => console.log(jsObject.name)).catch(error => console.error(error.msg));
+
+
+<%# json %>
