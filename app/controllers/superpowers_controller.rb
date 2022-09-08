@@ -4,6 +4,7 @@ class SuperpowersController < ApplicationController
   def index
     @superpowers = policy_scope(Superpower)
     @superpowerss = Superpower.where(rating: 5).sample(4)
+
     @markers = @superpowers.map do |superpower|
       {
         lat: superpower.latitude,
@@ -24,6 +25,7 @@ class SuperpowersController < ApplicationController
     @reservation = Reservation.new
     @reviews = @superpower.reviews
     @superpowers = policy_scope(Superpower)
+
     @markers = @superpowers.map do |superpower|
       {
         lat: superpower.latitude,
